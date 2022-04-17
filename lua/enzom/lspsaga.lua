@@ -5,5 +5,5 @@ lspsaga.setup({
   hint_sign = "",
   infor_sign = "",
   border_style = "round",
-  code_action_icon = " "
+  code_action_icon = ""
 })

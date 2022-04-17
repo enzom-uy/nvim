@@ -155,9 +155,8 @@ cmp.setup {
     end,
   },
   experimental = {
-    native_menu = false,
-    ghost_text = true,
-  }
+    ghost_text = false,
+  },
 }
 
 
@@ -200,6 +199,7 @@ local highlights = {
   CmpItemKindFunction = { fg = "#C586C0" },
   CmpItemKindClass = { fg = "#fe8019" },
   CmpItemKindKeyword = { fg = "#d3869b" },
+  CmpItemMenu = { fg = "NONE", bg = "NONE" },
   CmpItemKindSnippet = { fg = "#ebdbb2" },
   CmpItemKindConstructor = { fg = "#fbf1c7" },
   CmpItemKindVariable = { fg = "#83a598", bg = "NONE" },
@@ -213,7 +213,7 @@ local highlights = {
   CmpItemAbbrMatchFuzzy = { fg = "#b8bb26", bg = "NONE" },
 }
 
-vim.api.nvim_set_hl(0, "CmpBorderedWindow_FloatBorder", { fg = "#565c64" })
+vim.api.nvim_set_hl(0, "CmpBorderedWindow_FloatBorder", { fg = "#000000", bg = "#000000"})
 for group, hl in pairs(highlights) do
   vim.api.nvim_set_hl(0, group, hl)
 end

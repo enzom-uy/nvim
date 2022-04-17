@@ -10,8 +10,9 @@ vim.cmd("au ColorScheme * hi Cursor guibg=black")
 	"au ColorScheme * hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE"
 ) ]]
 vim.cmd("au ColorScheme * hi SignColumn guibg=NONE")
-vim.cmd("au ColorScheme * hi FloatBorder guifg=#eeeeee")
-vim.cmd("au ColorScheme * hi Normal guibg=#000000")
+vim.cmd("au ColorScheme * hi FloatBorder guifg=NONE")
+vim.cmd("au ColorScheme * hi NormalFloat guifg=NONE")
+vim.cmd("au ColorScheme * hi Normal guibg=NONE")
 
 vim.cmd("augroup END")
 

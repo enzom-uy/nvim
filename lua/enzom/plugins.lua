@@ -38,7 +38,7 @@ packer.init {
 }
 
 return packer.startup(function(use)
-  use "wbthomason/packer.nvim"
+  use {"wbthomason/packer.nvim"}
   use { "lewis6991/impatient.nvim", config = function()
     require('impatient')
   end }
@@ -47,22 +47,19 @@ return packer.startup(function(use)
 
   -- UI
   use({ "ellisonleao/gruvbox.nvim" })
-  use { "lukas-reineke/indent-blankline.nvim", after = "gruvbox.nvim" }
+  use { "lukas-reineke/indent-blankline.nvim", event = "BufRead" }
   use("kyazdani42/nvim-web-devicons")
   use { "hoob3rt/lualine.nvim", after = "gruvbox.nvim" }
   use { "akinsho/nvim-bufferline.lua", after = "gruvbox.nvim", config = function() require('bufferline').setup {} end }
 
-
   -- Navigation
   use { "nvim-lua/telescope.nvim" }
-  use({ "nvim-telescope/telescope-ui-select.nvim" })
+  use{ "nvim-telescope/telescope-ui-select.nvim" }
   use("nvim-telescope/telescope-fzy-native.nvim")
-  use({
-    "kyazdani42/nvim-tree.lua",
-  })
+  use{ "kyazdani42/nvim-tree.lua" }
 
   -- Quality of life for myself
-  use { 'echasnovski/mini.nvim', config = function()
+use { 'echasnovski/mini.nvim', config = function()
     require('mini.surround').setup({
       n_lines = 20,
       highlight_duration = 500,
@@ -73,20 +70,19 @@ return packer.startup(function(use)
         replace = 'rs', -- Replace surrounding
       },
     })
-  end, after = "nvim-treesitter" }
-  use { 'fedepujol/move.nvim', after = "nvim-treesitter" }
-  use { "mbbill/undotree", after = "nvim-treesitter" }
-  use { "b3nj5m1n/kommentary", after = "nvim-treesitter" }
+  end, event = "BufEnter" }
+  use { 'fedepujol/move.nvim', event = "BufEnter" }
+  use { "mbbill/undotree", event = "BufEnter" }
+  use { "b3nj5m1n/kommentary", event = "BufEnter" }
   use { "norcalli/nvim-colorizer.lua", config = function()
     require("colorizer").setup()
   end, after = "gruvbox.nvim" }
-  use { "johann2357/nvim-smartbufs", after = "gruvbox.nvim" }
-  use { "akinsho/toggleterm.nvim", opt = true, cmd = { 'ToggleTerm' } }
+  use { "johann2357/nvim-smartbufs", event = "BufEnter"}
   -- Treesitter and LSP
   use { "windwp/nvim-ts-autotag", config = function() require('nvim-ts-autotag').setup() end }
   use { "windwp/nvim-autopairs", config = function() require('nvim-autopairs').setup {} end }
   use { "David-Kunz/treesitter-unit", after = "nvim-treesitter" }
-  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  use{ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   use { "neovim/nvim-lspconfig" }
   use("williamboman/nvim-lsp-installer")
   use({ "RishabhRD/nvim-lsputils", requires = { "RishabhRD/popfix" } })
@@ -95,10 +91,10 @@ return packer.startup(function(use)
   use("onsails/lspkind-nvim")
   use { "jose-elias-alvarez/null-ls.nvim" }
   use({ "hrsh7th/vim-vsnip", requires = { "hrsh7th/vim-vsnip-integ", "rafamadriz/friendly-snippets" } })
-  use("rafamadriz/friendly-snippets")
+  use{"rafamadriz/friendly-snippets", module = "cmp_nvim_lsp", event = "InsertEnter"}
   use {
     "hrsh7th/nvim-cmp",
-    branch = "dev", --float menu
+    branch = "dev",
     after = "friendly-snippets",
     requires = { "onsails/lspkind-nvim" },
     { "hrsh7th/cmp-nvim-lsp" },
@@ -109,7 +105,7 @@ return packer.startup(function(use)
   use { 'TimUntersberger/neogit', opt = true, cmd = { "Neogit" } }
   use {
     "zbirenbaum/copilot.lua",
-    event = { "VimEnter" },
+    event = { "BufEnter" },
     config = function()
       vim.defer_fn(function()
         require("copilot").setup()
