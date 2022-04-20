@@ -7,6 +7,7 @@ require("nvim-treesitter.configs").setup({
 		"lua",
 		"tsx",
 		"typescript",
+		"go",
 	},
 	highlight = { enable = true, disable = {} },
 	autotag = { enable = true },

@@ -42,8 +42,8 @@ cmp.setup({
 	formatting = {
 		format = function(entry, vim_item)
 			vim_item.menu = ({
-				buffer = "[Buffer]",
 				nvim_lsp = "[LSP]",
+				buffer = "[Buffer]",
 				cmp_tabnine = "[TabNine]",
 				path = "[Path]",
 			})[entry.source.name]
@@ -93,9 +93,6 @@ tabnine:setup({
 		TelescopePrompt = true,
 	},
 })
-
---set max height of items
-vim.cmd([[ set pumheight=20 ]])
 
 local highlights = {
 	-- type highlights

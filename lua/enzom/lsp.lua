@@ -6,6 +6,7 @@ local servers = {
 	"jsonls",
 	"tsserver",
 	"sumneko_lua",
+	"gopls",
 }
 
 -- Diagnostics
@@ -83,7 +84,6 @@ lspconfig.tsserver.setup({
 })
 
 lspconfig.rust_analyzer.setup({})
-lspconfig.golangci_lint_ls.setup({})
 lspconfig.gopls.setup({
 	cmd = { "gopls", "serve" },
 	filetypes = { "go", "gomod" },
