@@ -7,6 +7,7 @@ local servers = {
 	"tsserver",
 	"sumneko_lua",
 	"gopls",
+	"rust_analyzer",
 }
 
 -- Diagnostics
@@ -36,6 +37,7 @@ local function on_attach(client)
 		local server_name = server
 		if client.name == server_name then
 			client.resolved_capabilities.document_formatting = false
+			client.resolved_capabilities.document_range_formatting = false
 		end
 	end
 end
@@ -83,7 +85,7 @@ lspconfig.tsserver.setup({
 	},
 })
 
-lspconfig.rust_analyzer.setup({})
+lspconfig.rust_analyzer.setup({ on_attach = on_attach })
 lspconfig.gopls.setup({
 	cmd = { "gopls", "serve" },
 	filetypes = { "go", "gomod" },
