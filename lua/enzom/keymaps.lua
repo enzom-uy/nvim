@@ -1,11 +1,10 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 keymap("n", "<C-f>", '<Cmd>lua require "telescope.builtin".find_files({hidden = true})<CR>', opts)
-keymap("n", "\\", '<Cmd>Telescope buffers<CR>', opts)
+keymap("n", "\\", "<Cmd>Telescope buffers<CR>", opts)
 keymap("n", ",g", '<Cmd>lua require "telescope.builtin".live_grep()<CR>', opts)
 keymap("n", "<C-n>", "<Cmd>NvimTreeFindFileToggle<CR>", opts)
 keymap("n", "<C-d>", "<Cmd>bd<CR>", opts)
@@ -34,10 +33,10 @@ keymap("n", "<Tab>", ":bnext<CR>", opts)
 keymap("n", "<S-Tab>", ":bprev<CR>", opts)
 
 --- Treesitter-units
-keymap('x', 'iu', ':lua require"treesitter-unit".select()<CR>', opts)
-keymap('x', 'au', ':lua require"treesitter-unit".select(true)<CR>', opts)
-keymap('o', 'iu', ':<c-u>lua require"treesitter-unit".select()<CR>', opts)
-keymap('o', 'au', ':<c-u>lua require"treesitter-unit".select(true)<CR>', opts)
+keymap("x", "iu", ':lua require"treesitter-unit".select()<CR>', opts)
+keymap("x", "au", ':lua require"treesitter-unit".select(true)<CR>', opts)
+keymap("o", "iu", ':<c-u>lua require"treesitter-unit".select()<CR>', opts)
+keymap("o", "au", ':<c-u>lua require"treesitter-unit".select(true)<CR>', opts)
 
 --- Lsp
 keymap("n", "<Leader>rn", "<Cmd>lua require('lspsaga.rename').rename()<CR>", opts)
@@ -59,11 +58,11 @@ keymap("n", "<leader>af", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 keymap("n", "<leader>ls", "<cmd>lua vim.diagnostic.open_float(" .. diag_opts .. ")<CR>", opts)
 
 --- Move.lua
-keymap('n', '<A-j>', ":MoveLine(1)<CR>", opts)
-keymap('n', '<A-k>', ":MoveLine(-1)<CR>", opts)
-keymap('v', '<A-j>', ":MoveBlock(1)<CR>", opts)
-keymap('v', '<A-k>', ":MoveBlock(-1)<CR>", opts)
-keymap('n', '<A-l>', ":MoveHChar(1)<CR>", opts)
-keymap('n', '<A-h>', ":MoveHChar(-1)<CR>", opts)
-keymap('v', '<A-l>', ":MoveHBlock(1)<CR>", opts)
-keymap('v', '<A-h>', ":MoveHBlock(-1)<CR>", opts)
+keymap("n", "<A-j>", ":MoveLine(1)<CR>", opts)
+keymap("n", "<A-k>", ":MoveLine(-1)<CR>", opts)
+keymap("v", "<A-j>", ":MoveBlock(1)<CR>", opts)
+keymap("v", "<A-k>", ":MoveBlock(-1)<CR>", opts)
+keymap("n", "<A-l>", ":MoveHChar(1)<CR>", opts)
+keymap("n", "<A-h>", ":MoveHChar(-1)<CR>", opts)
+keymap("v", "<A-l>", ":MoveHBlock(1)<CR>", opts)
+keymap("v", "<A-h>", ":MoveHBlock(-1)<CR>", opts)
