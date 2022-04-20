@@ -58,6 +58,8 @@ return packer.startup(function(use)
 	use({ "fedepujol/move.nvim", event = "BufEnter" })
 	use({ "mbbill/undotree", event = "BufEnter" })
 	use({ "b3nj5m1n/kommentary", event = "BufEnter" })
+	use({ "onsails/lspkind-nvim" })
+	use({ "hrsh7th/nvim-cmp", requires = { "onsails/lspkind-nvim", "hrsh7th/cmp-nvim-lsp" } })
 	use({
 		"norcalli/nvim-colorizer.lua",
 		config = function()
@@ -84,10 +86,10 @@ return packer.startup(function(use)
 	use({ "RishabhRD/nvim-lsputils", requires = { "RishabhRD/popfix" } })
 	use({ "tami5/lspsaga.nvim" })
 	use({ "L3MON4D3/LuaSnip" })
-	use({ "onsails/lspkind-nvim" })
+	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
+	use({ "hrsh7th/cmp-path", after = "cmp-buffer" })
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	use({ "rafamadriz/friendly-snippets", module = "cmp_nvim_lsp" })
-	use({ "hrsh7th/nvim-cmp", requires = { "onsails/lspkind-nvim", "hrsh7th/cmp-nvim-lsp" } })
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 
 	-- Git and copilot
