@@ -1,5 +1,4 @@
 local lspconfig = require("lspconfig")
-local protocol = require("vim.lsp.protocol")
 local util = require("lspconfig/util")
 
 -- Diagnostics
@@ -13,36 +12,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   },
 })
 
-protocol.CompletionItemKind = {
-  "", -- Text
-  "", -- Method
-  "", -- Function
-  "", -- Constructor
-  "", -- Field
-  "", -- Variable
-  "", -- Class
-  "ﰮ", -- Interface
-  "", -- Module
-  "", -- Property
-  "", -- Unit
-  "", -- Value
-  "", -- Enum
-  "", -- Keyword
-  "﬌", -- Snippet
-  "", -- Color
-  "", -- File
-  "", -- Reference
-  "", -- Folder
-  "", -- EnumMember
-  "", -- Constant
-  "", -- Struct
-  "", -- Event
-  "ﬦ", -- Operator
-  "", -- TypeParameter
-}
-
--- Code action popup
--- but only use it if installed
 local success_lsputils, lsputils_codeAction = pcall(require, "lsputil.codeAction")
 if success_lsputils then
   if vim.fn.has("nvim-0.6") == 1 then
@@ -52,10 +21,6 @@ if success_lsputils then
       lsputils_codeAction.code_action_handler(nil, actions, nil, nil, nil)
     end
   end
-end
-
-local function lsp_map(mode, left_side, right_side)
-  vim.api.nvim_buf_set_keymap(vim.api.nvim_get_current_buf(), mode, left_side, right_side, { noremap = true })
 end
 
 local function on_attach(client)
@@ -77,15 +42,10 @@ end
 
 local lsp_installer = require("nvim-lsp-installer")
 local servers = {
-  "cssls",
-  "cssmodules_ls",
-  "emmet_ls",
   "eslint",
-  "html",
   "jsonls",
   "tsserver",
   "sumneko_lua",
-  "bashls",
 }
 
 for _, name in pairs(servers) do
@@ -106,12 +66,6 @@ for _, lsp in ipairs(servers) do
     },
   })
 end
-
-lspconfig.emmet_ls.setup({
-  cmd = { "emmet-ls", "--stdio" },
-  filetypes = { "html", "css" },
-  single_file_support = true,
-})
 
 lspconfig.tsserver.setup({
   capabilities = capabilities,
@@ -141,4 +95,23 @@ lspconfig.gopls.setup {
       staticcheck = true,
     },
   },
+}
+
+lspconfig['gopls'].setup {
+  cmd = { 'gopls' },
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    gopls = {
+      experimentalPostfixCompletions = true,
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+      staticcheck = true,
+    },
+  },
+  init_options = {
+    usePlaceholders = true,
+  }
 }

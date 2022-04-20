@@ -84,25 +84,6 @@ _G.packer_plugins = {
     path = "/home/enzom/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
     url = "https://github.com/tzachar/cmp-tabnine"
   },
-  ["copilot-cmp"] = {
-    after_files = { "/home/enzom/.local/share/nvim/site/pack/packer/opt/copilot-cmp/after/plugin/copilot_cmp.lua" },
-    load_after = {
-      ["copilot.lua"] = true
-    },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/enzom/.local/share/nvim/site/pack/packer/opt/copilot-cmp",
-    url = "https://github.com/zbirenbaum/copilot-cmp"
-  },
-  ["copilot.lua"] = {
-    after = { "copilot-cmp" },
-    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fcopilot\frequire-\1\0\4\0\3\0\0066\0\0\0009\0\1\0003\2\2\0)\3d\0B\0\3\1K\0\1\0\0\rdefer_fn\bvim\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/enzom/.local/share/nvim/site/pack/packer/opt/copilot.lua",
-    url = "https://github.com/zbirenbaum/copilot.lua"
-  },
   ["friendly-snippets"] = {
     loaded = false,
     needs_bufread = false,
@@ -120,13 +101,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/enzom/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
-  },
-  ["indent-blankline.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/enzom/.local/share/nvim/site/pack/packer/opt/indent-blankline.nvim",
-    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   kommentary = {
     loaded = false,
@@ -153,7 +127,7 @@ _G.packer_plugins = {
     url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["mini.nvim"] = {
-    config = { "\27LJ\2\n«\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\rmappings\1\0\3\freplace\ars\badd\acs\vdelete\ads\1\0\3\20funname_pattern\r[%w_%.]+\23highlight_duration\3ô\3\fn_lines\3\20\nsetup\18mini.surround\frequire\0" },
+    config = { "\27LJ\2\n’\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\rmappings\1\0\3\freplace\ars\badd\acs\vdelete\ads\1\0\2\fn_lines\3\20\23highlight_duration\3ô\3\nsetup\18mini.surround\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -221,13 +195,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/enzom/.local/share/nvim/site/pack/packer/start/nvim-lsputils",
     url = "https://github.com/RishabhRD/nvim-lsputils"
-  },
-  ["nvim-smartbufs"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/enzom/.local/share/nvim/site/pack/packer/opt/nvim-smartbufs",
-    url = "https://github.com/johann2357/nvim-smartbufs"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -298,16 +265,6 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/enzom/.local/share/nvim/site/pack/packer/opt/undotree",
     url = "https://github.com/mbbill/undotree"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/enzom/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
-  },
-  ["vim-vsnip-integ"] = {
-    loaded = true,
-    path = "/home/enzom/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
-    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   }
 }
 
@@ -354,19 +311,18 @@ try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B
 time([[Config for nvim-autopairs]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-cmp ]]
 vim.cmd [[ packadd gruvbox.nvim ]]
-vim.cmd [[ packadd lualine.nvim ]]
-vim.cmd [[ packadd nvim-bufferline.lua ]]
-
--- Config for: nvim-bufferline.lua
-try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15bufferline\frequire\0", "config", "nvim-bufferline.lua")
-
 vim.cmd [[ packadd nvim-colorizer.lua ]]
 
 -- Config for: nvim-colorizer.lua
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
 
+vim.cmd [[ packadd nvim-bufferline.lua ]]
+
+-- Config for: nvim-bufferline.lua
+try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15bufferline\frequire\0", "config", "nvim-bufferline.lua")
+
+vim.cmd [[ packadd lualine.nvim ]]
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd treesitter-unit ]]
 time([[Sequenced loading]], false)
@@ -381,8 +337,7 @@ vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'friendly-snippets'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'kommentary', 'copilot.lua', 'mini.nvim', 'nvim-smartbufs', 'undotree', 'move.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'mini.nvim', 'move.nvim', 'undotree', 'kommentary'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
