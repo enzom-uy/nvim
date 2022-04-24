@@ -118,3 +118,13 @@ lspconfig["gopls"].setup({
 		usePlaceholders = true,
 	},
 })
+
+lspconfig.tailwindcss.setup({
+	cmd = { "tailwindcss-language-server", "--stdio" },
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+	},
+})
