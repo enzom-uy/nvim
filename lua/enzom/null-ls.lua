@@ -1,5 +1,5 @@
 local null_ls = require("null-ls")
-local formatting = null_ls.builtins.formatting
+  local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
 	debug = false,
@@ -31,7 +31,7 @@ null_ls.setup({
 			vim.cmd([[
             augroup LspFormatting
                 autocmd! * <buffer>
-                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()
             augroup END
             ]])
 		end

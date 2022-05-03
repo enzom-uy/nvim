@@ -40,7 +40,7 @@ keymap("o", "au", ':<c-u>lua require"treesitter-unit".select(true)<CR>', opts)
 
 --- Lsp
 keymap("n", "<Leader>rn", "<Cmd>lua require('lspsaga.rename').rename()<CR>", opts)
-keymap("n", "<Leader>f", "<Cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>", opts)
+keymap("n", "<Leader>f", "<Cmd>lua vim.lsp.buf.format()<CR>", opts)
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
@@ -49,7 +49,6 @@ keymap("n", "gW", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", opts)
 keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 keymap("n", "<leader>le", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
 -- Replacement for lspsaga
 local diag_opts = '{ width = 80, focusable = false, border = "single" }'

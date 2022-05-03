@@ -22,7 +22,8 @@ vim.cmd([[
   augroup end
 ]])
 
-local status_ok, packer = pcall(require, "packer")
+
+    local status_ok, packer = pcall(require, "packer")
 if not status_ok then
 	return
 end
@@ -71,7 +72,7 @@ return packer.startup(function(use)
 	use({ "mbbill/undotree", event = "BufEnter" })
 	use({ "b3nj5m1n/kommentary", event = "BufEnter" })
 	use({ "onsails/lspkind-nvim" })
-	use({ "hrsh7th/nvim-cmp", requires = { "onsails/lspkind-nvim", "hrsh7th/cmp-nvim-lsp" } })
+	use({ "hrsh7th/nvim-cmp", requires = { "onsails/lspkind-nvim", "hrsh7th/cmp-nvim-lsp" }, commit = "f841fa6" })
 	use({
 		"norcalli/nvim-colorizer.lua",
 		config = function()
@@ -93,14 +94,14 @@ return packer.startup(function(use)
 	})
 	use({ "David-Kunz/treesitter-unit", after = "nvim-treesitter" })
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	use({ "neovim/nvim-lspconfig" })
+	use({ "neovim/nvim-lspconfig", commit = "86df1c8" })
 	use({ "williamboman/nvim-lsp-installer" })
 	use({ "RishabhRD/nvim-lsputils", requires = { "RishabhRD/popfix" } })
 	use({ "tami5/lspsaga.nvim" })
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
 	use({ "hrsh7th/cmp-path", after = "cmp-buffer" })
-	use({ "jose-elias-alvarez/null-ls.nvim" })
+	use({ "jose-elias-alvarez/null-ls.nvim", commit = "b74bebd" })
 	use({ "rafamadriz/friendly-snippets" })
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 
