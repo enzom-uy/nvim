@@ -14,7 +14,7 @@ require("nvim-tree").setup({
 		auto_open = true,
 	},
 	diagnostics = {
-		enable = false,
+		enable = true,
 		icons = {
 			hint = "",
 			info = "",
@@ -32,7 +32,7 @@ require("nvim-tree").setup({
 		args = {},
 	},
 	filters = {
-		dotfiles = false,
+		dotfiles = true,
 		custom = {},
 	},
 	git = {

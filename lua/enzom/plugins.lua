@@ -22,8 +22,7 @@ vim.cmd([[
   augroup end
 ]])
 
-
-    local status_ok, packer = pcall(require, "packer")
+local status_ok, packer = pcall(require, "packer")
 if not status_ok then
 	return
 end
@@ -40,7 +39,8 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use({ "ellisonleao/gruvbox.nvim" })
 	use({ "kyazdani42/nvim-web-devicons" })
-	use({ "hoob3rt/lualine.nvim", after = "gruvbox.nvim" })
+	use({ "hoob3rt/lualine.nvim" })
+	use({ "arkav/lualine-lsp-progress" })
 	use({
 		"akinsho/nvim-bufferline.lua",
 		after = "gruvbox.nvim",
@@ -53,21 +53,6 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope-fzy-native.nvim" })
 	use({ "kyazdani42/nvim-tree.lua" })
 	use("lukas-reineke/indent-blankline.nvim")
-	use({
-		"echasnovski/mini.nvim",
-		config = function()
-			require("mini.surround").setup({
-				n_lines = 20,
-				highlight_duration = 500,
-				mappings = {
-					add = "cs",
-					delete = "ds",
-					replace = "rs",
-				},
-			})
-		end,
-		event = "BufEnter",
-	})
 	use({ "fedepujol/move.nvim", event = "BufEnter" })
 	use({ "mbbill/undotree", event = "BufEnter" })
 	use({ "b3nj5m1n/kommentary", event = "BufEnter" })
@@ -100,13 +85,37 @@ return packer.startup(function(use)
 	use({ "tami5/lspsaga.nvim" })
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-path", after = "cmp-buffer" })
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "b74bebd" })
 	use({ "rafamadriz/friendly-snippets" })
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 
 	-- Git and copilot
 	use({ "TimUntersberger/neogit", opt = true, cmd = { "Neogit" } })
+	--[[ use({
+		"zbirenbaum/copilot.lua",
+		event = { "BufEnter" },
+		config = function()
+			vim.defer_fn(function()
+				require("copilot").setup()
+			end, 100)
+		end,
+	})
+
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua", "nvim-cmp" },
+	}) ]]
+
+	use("johann2357/nvim-smartbufs")
+
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "v1.*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+		cmd = "ToggleTerm",
+	})
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

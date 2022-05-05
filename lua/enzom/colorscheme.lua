@@ -14,7 +14,6 @@ vim.cmd("au ColorScheme * hi FloatBorder guifg=#000000")
 vim.cmd("au ColorScheme * hi NormalFloat guifg=NONE guibg=#000000")
 vim.cmd("au ColorScheme * hi FloatBorder guifg=#ffffff")
 vim.cmd("au ColorScheme * hi Normal guibg=NONE")
-
 vim.cmd("augroup END")
 
 vim.opt.termguicolors = true
