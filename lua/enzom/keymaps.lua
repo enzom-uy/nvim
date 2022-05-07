@@ -2,7 +2,6 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
 keymap("n", "<C-f>", '<Cmd>lua require "telescope.builtin".find_files({hidden = true})<CR>', opts)
 keymap("n", "\\", "<Cmd>Telescope buffers<CR>", opts)
 keymap("n", ",g", '<Cmd>lua require "telescope.builtin".live_grep()<CR>', opts)
