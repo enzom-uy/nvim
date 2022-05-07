@@ -107,7 +107,7 @@ return packer.startup(function(use)
 	}) ]]
 
 	use("johann2357/nvim-smartbufs")
-
+	use({ "ojroques/nvim-bufdel" })
 	use({
 		"akinsho/toggleterm.nvim",
 		tag = "v1.*",
@@ -116,6 +116,7 @@ return packer.startup(function(use)
 		end,
 		cmd = "ToggleTerm",
 	})
+	use("andweeb/presence.nvim")
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
