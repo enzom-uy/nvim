@@ -117,6 +117,7 @@ return packer.startup(function(use)
 		cmd = "ToggleTerm",
 	})
 	use("andweeb/presence.nvim")
+	use("tpope/vim-surround")
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
