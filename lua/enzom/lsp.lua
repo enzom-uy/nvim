@@ -36,8 +36,8 @@ local function on_attach(client)
 	for _, server in ipairs(servers) do
 		local server_name = server
 		if client.name == server_name then
-			client.resolved_capabilities.document_formatting = false
-			client.resolved_capabilities.document_range_formatting = false
+			client.server_capabilities.document_formatting = false
+			client.server_capabilities.document_range_formatting = false
 		end
 	end
 end
