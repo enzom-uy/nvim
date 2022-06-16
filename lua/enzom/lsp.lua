@@ -1,6 +1,7 @@
 local lspconfig = require("lspconfig")
 local util = require("lspconfig/util")
 local lsp_installer = require("nvim-lsp-installer")
+
 local servers = {
 	"eslint",
 	"jsonls",
@@ -8,9 +9,10 @@ local servers = {
 	"sumneko_lua",
 	"gopls",
 	"rust_analyzer",
+  "html",
+  "cssls",
 }
 
--- Diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
 	signs = true,
