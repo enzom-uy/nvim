@@ -128,3 +128,5 @@ lspconfig.tailwindcss.setup({
 		"typescriptreact",
 	},
 })
+
+lspconfig.vuels.setup{}

@@ -1,6 +1,6 @@
 local fn = vim.fn
 -- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system({
     "git",
@@ -49,6 +49,7 @@ return packer.startup(function(use)
     end,
   })
   use({ "nvim-lua/telescope.nvim" })
+
   use({ "nvim-telescope/telescope-ui-select.nvim" })
   use({ "nvim-telescope/telescope-fzy-native.nvim" })
   use({ "kyazdani42/nvim-tree.lua" })
@@ -65,6 +66,7 @@ return packer.startup(function(use)
     end,
     after = "gruvbox.nvim",
   })
+  use({ "folke/todo-comments.nvim", event = "BufEnter", config = function() require("todo-comments").setup() end} )
   use({
     "windwp/nvim-ts-autotag",
     config = function()
@@ -116,7 +118,14 @@ return packer.startup(function(use)
     end,
     cmd = "ToggleTerm",
   })
-  use("tpope/vim-surround")
+use({
+    "kylechui/nvim-surround",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+})
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

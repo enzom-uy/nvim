@@ -39,7 +39,7 @@ keymap("o", "iu", ':<c-u>lua require"treesitter-unit".select()<CR>', opts)
 keymap("o", "au", ':<c-u>lua require"treesitter-unit".select(true)<CR>', opts)
 
 --- Lsp
-keymap("n", "<Leader>rn", "<Cmd>lua require('lspsaga.rename').rename()<CR>", opts)
+keymap("n", "<Leader>rn", ":Lspsaga rename<CR>", opts)
 keymap("n", "<Leader>f", "<Cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>", opts)
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)

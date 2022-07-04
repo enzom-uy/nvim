@@ -35,7 +35,6 @@ cmp.setup({
   },
   sources = {
     { name = "nvim_lsp", group_index = 2 },
-    -- { name = "copilot", group_index = 2 },
     { name = "cmp_tabnine", group_index = 2 },
     { name = "buffer", group_index = 2 },
   },
@@ -43,7 +42,6 @@ cmp.setup({
     format = function(entry, vim_item)
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        -- copilot = "[Copilot]",
         cmp_tabnine = "[TabNine]",
         buffer = "[Buffer]",
       })[entry.source.name]
