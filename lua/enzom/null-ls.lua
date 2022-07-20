@@ -5,9 +5,9 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
   debug = false,
   sources = {
-    formatting.stylua,
-    formatting.prettierd,
+    formatting.prettier_d_slim,
     formatting.eslint_d,
+    formatting.stylua,
     formatting.gofmt,
     formatting.rustfmt.with({
       extra_args = function(params)

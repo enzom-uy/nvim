@@ -6,7 +6,7 @@ local right_pad = ""
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "gruvbox",
+		theme = "tokyodark",
 		component_separators = "|",
 		section_separators = { left = left_pad, right = right_pad },
 		disabled_filetypes = {},
