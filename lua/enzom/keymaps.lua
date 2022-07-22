@@ -29,6 +29,10 @@ keymap("i", ",", ",<c-g>u", opts)
 keymap("i", "!", "!<c-g>u", opts)
 keymap("i", "?", "?<c-g>u", opts)
 
+--- Git
+keymap("n", "<Leader>g", ":Git<CR>", opts)
+keymap("n", "<Leader>p", ":Git push<CR>", opts)
+
 keymap("n", "<Tab>", ":bnext<CR>", opts)
 keymap("n", "<S-Tab>", ":bprev<CR>", opts)
 
