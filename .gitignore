@@ -1,5 +1,6 @@
 !colors/default_theme.lua
 colors/*
+node_modules/
 docs
 ginit.vim
 lua/packer_compiled.lua
