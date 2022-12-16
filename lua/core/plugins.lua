@@ -258,6 +258,9 @@ local astro_plugins = {
     config = function() require "configs.gitsigns" end,
   },
 
+  -- Nvim Surround
+  ["TimUntersberger/neogit"] = { event = "VimEnter", config = function() require("neogit").setup {} end },
+
   -- Start screen
   ["goolord/alpha-nvim"] = {
     module = "alpha",

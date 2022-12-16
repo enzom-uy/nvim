@@ -65,6 +65,10 @@ if is_available "neovim-session-manager" then
   { "<cmd>SessionManager! load_current_dir_session<cr>", desc = "Load current directory session" }
 end
 
+-- Splits
+maps.n["<leader>v"] = { "<cmd>vsplit<cr>", desc = "Create vertical split" }
+maps.n["<leader>h"] = { "<cmd>split<cr>", desc = "Create horizontal split" }
+
 -- Smart Splits
 if is_available "smart-splits.nvim" then
   -- Better window navigation
