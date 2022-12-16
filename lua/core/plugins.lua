@@ -100,6 +100,9 @@ local astro_plugins = {
   -- Statusline
   ["rebelot/heirline.nvim"] = { event = "VimEnter", config = function() require "configs.heirline" end },
 
+  -- Nvim Surround
+  ["kylechui/nvim-surround"] = { event = "VimEnter", config = function() require("nvim-surround").setup {} end },
+
   -- Syntax highlighting
   ["nvim-treesitter/nvim-treesitter"] = {
     module = "nvim-treesitter",
@@ -121,7 +124,7 @@ local astro_plugins = {
         "TSUpdateSync",
       })
     end,
-    run = function() require("nvim-treesitter.install").update { with_sync = true }() end,
+    run = function() require("nvim-treesitter.install").update { with_sync = true } () end,
     config = function() require "configs.treesitter" end,
   },
 

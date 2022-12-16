@@ -11,4 +11,8 @@ return {
       },
     },
   },
+  header = {
+    " I am, unfortunately, ",
+    "  the Hero of Ages.",
+  },
 }
