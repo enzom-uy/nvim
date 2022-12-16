@@ -50,6 +50,17 @@ if is_available "gitsigns.nvim" then
   maps.n["<leader>gd"] = { function() require("gitsigns").diffthis() end, desc = "View git diff" }
 end
 
+-- Neogit
+maps.n["<leader>n"] = { "<cmd>Neogit<cr>", desc = "Toggle Neogit" }
+
+-- Harpoon
+maps.n["<leader>hh"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show Harpoon quick menu" }
+maps.n["<leader>ha"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Add new mark to Harpoon" }
+maps.n["<A-h>"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Move to Harpoon 1" }
+maps.n["<A-j>"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = "Move to Harpoon 2" }
+maps.n["<A-k>"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = "Move to Harpoon 3" }
+maps.n["<A-l>"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", desc = "Move to Harpoon 4" }
+
 -- NeoTree
 if is_available "neo-tree.nvim" then
   maps.n["<C-n>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" }
@@ -66,8 +77,8 @@ if is_available "neovim-session-manager" then
 end
 
 -- Splits
-maps.n["<leader>v"] = { "<cmd>vsplit<cr>", desc = "Create vertical split" }
-maps.n["<leader>h"] = { "<cmd>split<cr>", desc = "Create horizontal split" }
+maps.n["<leader>vs"] = { "<cmd>vsplit<cr>", desc = "Create vertical split" }
+maps.n["<leader>hs"] = { "<cmd>split<cr>", desc = "Create horizontal split" }
 
 -- Smart Splits
 if is_available "smart-splits.nvim" then

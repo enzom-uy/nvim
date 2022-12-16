@@ -242,6 +242,10 @@ local astro_plugins = {
     config = function() require "configs.telescope" end,
   },
 
+  -- All mighty Harpoon
+  ["ThePrimeagen/harpoon"] = { event = "VimEnter",
+    config = function() require("harpoon").ui {} require("harpoon").mark() end },
+
   -- Fuzzy finder syntax support
   ["nvim-telescope/telescope-fzf-native.nvim"] = {
     after = "telescope.nvim",
