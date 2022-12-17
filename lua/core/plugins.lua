@@ -243,8 +243,7 @@ local astro_plugins = {
   },
 
   -- All mighty Harpoon
-  ["ThePrimeagen/harpoon"] = { event = "VimEnter",
-    config = function() require("harpoon").ui {} require("harpoon").mark() end },
+  ["ThePrimeagen/harpoon"] = {},
 
   -- Fuzzy finder syntax support
   ["nvim-telescope/telescope-fzf-native.nvim"] = {
@@ -264,6 +263,9 @@ local astro_plugins = {
 
   -- Nvim Surround
   ["TimUntersberger/neogit"] = { event = "VimEnter", config = function() require("neogit").setup {} end },
+
+  -- Treesitter unit
+  ["David-Kunz/treesitter-unit"] = { event = "VimEnter" },
 
   -- Start screen
   ["goolord/alpha-nvim"] = {

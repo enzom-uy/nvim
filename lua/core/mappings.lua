@@ -1,4 +1,5 @@
 local is_available = astronvim.is_available
+local keymap = vim.keymap
 
 local maps = { i = {}, n = {}, v = {}, t = {}, [""] = {} }
 
@@ -52,6 +53,13 @@ end
 
 -- Neogit
 maps.n["<leader>n"] = { "<cmd>Neogit<cr>", desc = "Toggle Neogit" }
+
+--- Treesitter-units
+keymap.set("x", "iu", ':lua require"treesitter-unit".select()<CR>')
+keymap.set("x", "au", ':lua require"treesitter-unit".select(true)<CR>')
+keymap.set("o", "iu", ':<c-u>lua require"treesitter-unit".select()<CR>')
+keymap.set("o", "au", ':<c-u>lua require"treesitter-unit".select(true)<CR>')
+
 
 -- Harpoon
 maps.n["<leader>hh"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show Harpoon quick menu" }
