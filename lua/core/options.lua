@@ -1,15 +1,27 @@
 vim.opt.shortmess:append { s = true, I = true } -- disable startup message
 astronvim.vim_opts(astronvim.user_plugin_opts("options", {
   opt = {
-    backspace = vim.opt.backspace + { "nostop", "start", "eol", "indent" }, -- Don't stop backspace at insert
+    fileencoding = "utf-8", -- File content encoding for the buffer
+    encoding = "utf-8",
+
+    number = true, -- Show numberline
+    relativenumber = true, -- Show relative numberline
+
+    title = true,
+    autoindent = true,
+    breakindent = true,
+    smartindent = true,
+    signcolumn = "yes", -- Always show the sign column
+
+    backupskip = { "/tmp/*", "/private/tmp/*" },
+    backspace = { "start", "eol", "indent" }, -- Don't stop backspace at insert
     inccommand = "split",
     clipboard = "unnamedplus", -- Connection to the system clipboard
     cmdheight = 1, -- hide command line unless needed
     completeopt = { "menuone", "noselect" }, -- Options for insert mode completion
-    copyindent = true, -- Copy the previous indentation on autoindenting
     cursorline = true, -- Highlight the text line of the cursor
+    showcmd = true,
     expandtab = true, -- Enable the use of space in tab
-    fileencoding = "utf-8", -- File content encoding for the buffer
     fillchars = { eob = " " }, -- Disable `~` on nonexistent lines
     history = 100, -- Number of commands to remember in a history table
     ignorecase = true, -- Case insensitive searching
@@ -18,18 +30,13 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     undodir = vim.fn.stdpath("data") .. "/undodir",
     lazyredraw = true, -- lazily redraw screen
     mouse = "a", -- Enable mouse support
-    number = true, -- Show numberline
-    preserveindent = true, -- Preserve indent structure as much as possible
-    breakindent = true,
     pumheight = 10, -- Height of the pop up menu
-    relativenumber = true, -- Show relative numberline
     scrolloff = 10, -- Number of lines to keep above and below the cursor
     shiftwidth = 2, -- Number of space inserted for indentation
     tabstop = 2, -- Number of space in a tab
-    showmode = false, -- Disable showing modes in command line
+    showmode = true, -- Disable showing modes in command line
     showtabline = 2, -- always display tabline
     sidescrolloff = 8, -- Number of columns to keep at the sides of the cursor
-    signcolumn = "yes", -- Always show the sign column
     smartcase = true, -- Case sensitivie searching
     smarttab = true,
     splitbelow = true, -- Splitting a new window below the current one
