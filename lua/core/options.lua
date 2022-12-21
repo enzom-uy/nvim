@@ -14,6 +14,7 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     signcolumn = "yes", -- Always show the sign column
 
     backupskip = { "/tmp/*", "/private/tmp/*" },
+    conceallevel = 2,
     backspace = { "start", "eol", "indent" }, -- Don't stop backspace at insert
     inccommand = "split",
     clipboard = "unnamedplus", -- Connection to the system clipboard

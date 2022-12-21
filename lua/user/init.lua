@@ -1,4 +1,4 @@
-vim.g.gruvbox_baby_transparent_mode = 1
+vim.cmd [[colorscheme tokyonight-night]]
 
 require('neorg').setup {
   load = {
@@ -12,9 +12,7 @@ require('neorg').setup {
         }
       }
     },
-    ["core.norg.concealer"] = {
-      config = {}
-    },
+    ["core.norg.concealer"] = { config = { icon_preset = "diamond" } },
     ["core.norg.completion"] = {
       config = {
         engine = "nvim-cmp"
@@ -56,14 +54,14 @@ require("zen-mode").setup {
     },
     twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
     gitsigns = { enabled = false }, -- disables git signs
-    tmux = { enabled = true }, -- disables the tmux statusline
+    tmux = { enabled = false }, -- disables the tmux statusline
     -- this will change the font size on kitty when in zen mode
     -- to make this work, you need to set the following kitty options:
     -- - allow_remote_control socket-only
     -- - listen_on unix:/tmp/kitty
     kitty = {
       enabled = true,
-      font = "+4", -- font size increment
+      font = "+10", -- font size increment
     },
   },
   -- callback where you can add custom code when the Zen window opens
@@ -77,7 +75,7 @@ require("zen-mode").setup {
 
 
 return {
-  colorscheme = "gruvbox-baby",
+  -- colorscheme = "gruvbox-baby",
   plugins = {
     init = {
       {

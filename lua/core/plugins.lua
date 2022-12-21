@@ -23,6 +23,7 @@ local astro_plugins = {
   ["lewis6991/impatient.nvim"] = {},
 
   ["nvim-neorg/neorg"] = {},
+  ['folke/tokyonight.nvim'] = {},
 
   ["folke/zen-mode.nvim"] = {},
   -- Lua functions
