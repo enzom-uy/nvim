@@ -13,6 +13,10 @@ maps.n["<C-s>"] = { "<cmd>w<cr>", desc = "Force write" }
 maps.n["<C-j>"] = { "<C-d>", desc = "Jump down" }
 maps.n["<C-k>"] = { "<C-u>", desc = "Jump down" }
 
+
+-- ZenMode
+maps.n["<leader>z"] = { "<cmd>ZenMode<CR>", desc = "Toggle Zen Mode" }
+
 -- Alpha
 if is_available "alpha-nvim" then
   maps.n["<leader>d"] = { function() require("alpha").start() end, desc = "Alpha Dashboard" }
@@ -121,10 +125,7 @@ if is_available "telescope.nvim" then
   maps.n["<leader>gc"] = { function() require("telescope.builtin").git_commits() end, desc = "Git commits" }
   maps.n["<leader>ff"] = { function() require("telescope.builtin").find_files { hidden = true } end,
     desc = "Search files" }
-  maps.n["<leader>fF"] = {
-    function() require("telescope.builtin").find_files { hidden = true, no_ignore = true } end,
-    desc = "Search all files",
-  }
+
   maps.n["<leader>fb"] = { function() require("telescope.builtin").buffers() end, desc = "Search buffers" }
   maps.n["<leader>fh"] = { function() require("telescope.builtin").help_tags() end, desc = "Search help" }
   maps.n["<leader>fm"] = { function() require("telescope.builtin").marks() end, desc = "Search marks" }

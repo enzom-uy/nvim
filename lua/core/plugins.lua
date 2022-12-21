@@ -22,6 +22,9 @@ local astro_plugins = {
   -- Optimiser
   ["lewis6991/impatient.nvim"] = {},
 
+  ["nvim-neorg/neorg"] = {},
+
+  ["folke/zen-mode.nvim"] = {},
   -- Lua functions
   ["nvim-lua/plenary.nvim"] = { module = "plenary" },
 
