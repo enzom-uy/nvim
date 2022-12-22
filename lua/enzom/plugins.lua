@@ -29,6 +29,8 @@ local plugins = {
   "folke/zen-mode.nvim",
   { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" }, tag = "nightly" },
   "akinsho/nvim-bufferline.lua",
+  "stevearc/dressing.nvim",
+  "goolord/alpha-nvim",
 
   -- Tools
   "numToStr/Comment.nvim",
@@ -51,6 +53,8 @@ local plugins = {
   -- QOL
   "ojroques/nvim-bufdel",
   { "fedepujol/move.nvim", event = "BufEnter" },
+
+  "mrjones2014/smart-splits.nvim",
 
   -- Utilities
   "nvim-lua/plenary.nvim",
