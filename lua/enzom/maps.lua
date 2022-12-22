@@ -1,6 +1,5 @@
-local keymap = vim.keymap
-
 vim.g.mapleader = ";"
+local keymap = vim.keymap
 
 --- Git
 keymap.set("n", "<Space>g", ":Neogit<CR>")
