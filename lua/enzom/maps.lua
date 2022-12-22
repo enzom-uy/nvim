@@ -14,6 +14,9 @@ keymap.set("n", "-", "<C-x>")
 -- Delete a word backwards
 keymap.set("n", "dw", 'vb"_d')
 
+-- Zen Mode
+keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>")
+
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
