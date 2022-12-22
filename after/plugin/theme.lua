@@ -8,5 +8,6 @@ vim.g.gruvbox_baby_telescope_theme = 0
 -- Enable transparent mode
 vim.g.gruvbox_baby_transparent_mode = 1
 
+vim.opt.background = "dark"
 -- Load the colorscheme
-vim.cmd [[colorscheme gruvbox-baby]]
+vim.cmd [[colorscheme oxocarbon]]

@@ -2,7 +2,7 @@ vim.g.mapleader = ";"
 local keymap = vim.keymap
 
 --- Git
-keymap.set("n", "<Space>g", ":Neogit<CR>")
+keymap.set("n", "<leader>n", ":Neogit<CR>")
 
 keymap.set("n", "x", '"_x')
 
@@ -33,13 +33,11 @@ keymap.set("n", "<S-j>", ":Lspsaga diagnostic_jump_next<CR>")
 keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>")
 keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>")
 
-keymap.set("n", "<Space>af", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+keymap.set("n", "<leader>af", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 
 -- Save with root permission (not working for now)
 --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
 
--- New tab
-keymap.set("n", "te", ":tabedit")
 -- Split window
 keymap.set("n", "<Space>h", ":split<Return><C-w>w")
 keymap.set("n", "<Space>v", ":vsplit<Return><C-w>w")
@@ -48,10 +46,10 @@ keymap.set("", "<C-h>", "<C-w>h")
 keymap.set("", "<C-l>", "<C-w>l")
 
 -- Resize window
-keymap.set("n", "<C-w><left>", "<C-w><")
-keymap.set("n", "<C-w><right>", "<C-w>>")
-keymap.set("n", "<C-w><up>", "<C-w>+")
-keymap.set("n", "<C-w><down>", "<C-w>-")
+keymap.set("n", "<leader>h", "<Cmd>SmartResizeLeft<CR>")
+keymap.set("n", "<leader>l", "<Cmd>SmartResizeRight<CR>")
+keymap.set("n", "<leader>k", "<Cmd>SmartResizeUp<CR>")
+keymap.set("n", "<leader>j", "<Cmd>SmartResizeDown<CR>")
 
 -- Treesitter units
 

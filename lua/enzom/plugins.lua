@@ -1,5 +1,5 @@
 local plugins = {
-  -- LSP and Autocompletion stuff
+  -- LSP, autocompletion and Treesitter stuff.
   "onsails/lspkind-nvim",
   "hrsh7th/cmp-nvim-lsp",
   "neovim/nvim-lspconfig",
@@ -7,6 +7,11 @@ local plugins = {
   "glepnir/lspsaga.nvim",
   "L3MON4D3/LuaSnip",
   { "nvim-treesitter/nvim-treesitter", cmd = "TSUpdate" },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "BufReadPre",
+    config = function() require("treesitter-context").setup() end,
+  },
   {
     "VonHeikemen/lsp-zero.nvim",
     dependencies = {
@@ -22,39 +27,39 @@ local plugins = {
   },
 
   -- Formatting
-  "jose-elias-alvarez/null-ls.nvim",
+  { "jose-elias-alvarez/null-ls.nvim", after = "BufEnter" },
 
   -- UI
   "nvim-lualine/lualine.nvim",
-  "folke/zen-mode.nvim",
+  { "folke/zen-mode.nvim", cmd = "ZenMode" },
   { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" }, tag = "nightly" },
   "akinsho/nvim-bufferline.lua",
-  "stevearc/dressing.nvim",
+  { "stevearc/dressing.nvim", event = "VeryLazy" },
   "goolord/alpha-nvim",
 
   -- Tools
-  "numToStr/Comment.nvim",
-  "kylechui/nvim-surround",
-  "JoosepAlviste/nvim-ts-context-commentstring",
-  "mbbill/undotree",
+  { "numToStr/Comment.nvim", event = "BufEnter" },
+  { "kylechui/nvim-surround", event = "BufEnter" },
+  { "JoosepAlviste/nvim-ts-context-commentstring", event = "BufEnter" },
+  { "mbbill/undotree", event = "BufEnter" },
   { "David-Kunz/treesitter-unit", lazy = true },
-  "nvim-telescope/telescope.nvim",
-  "nvim-telescope/telescope-ui-select.nvim",
-  "windwp/nvim-autopairs",
-  "windwp/nvim-ts-autotag",
-  "norcalli/nvim-colorizer.lua",
+  { "nvim-telescope/telescope.nvim", event = "VeryLazy" },
+  { "nvim-telescope/telescope-ui-select.nvim", event = "VeryLazy" },
+  { "windwp/nvim-autopairs", event = "BufEnter" },
+  { "windwp/nvim-ts-autotag", event = "BufEnter" },
+  { "norcalli/nvim-colorizer.lua", event = "BufEnter" },
 
-  "TimUntersberger/neogit",
-  "lewis6991/gitsigns.nvim",
+  { "TimUntersberger/neogit", cmd = "Neogit" },
+  { "lewis6991/gitsigns.nvim", event = "BufEnter" },
 
   -- Appearance
-  "luisiacc/gruvbox-baby",
+  { "luisiacc/gruvbox-baby", lazy = false },
+  { "shaunsingh/oxocarbon.nvim", lazy = false, enabled = true },
 
   -- QOL
-  "ojroques/nvim-bufdel",
+  { "ojroques/nvim-bufdel", event = "BufEnter" },
   { "fedepujol/move.nvim", event = "BufEnter" },
-
-  "mrjones2014/smart-splits.nvim",
+  { "mrjones2014/smart-splits.nvim", event = "VeryLazy" },
 
   -- Utilities
   "nvim-lua/plenary.nvim",
