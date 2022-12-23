@@ -4,11 +4,10 @@ if not status then return end
 ts.setup {
   highlight = {
     enable = true,
-    disable = {},
+    additional_vim_regex_highlighting = { "org" },
   },
   indent = {
     enable = true,
-    disable = {},
   },
   ensure_installed = {
     "tsx",
@@ -17,6 +16,7 @@ ts.setup {
     "html",
     "lua",
     "prisma",
+    "org",
   },
   autotag = {
     enable = true,

@@ -22,7 +22,6 @@ telescope.setup {
       "node_modules/",
       "coverage/",
       "__pycache__/",
-      "%.o",
       "package-lock",
       ".next/",
       "venv/",
@@ -46,7 +45,8 @@ vim.keymap.set("n", ";f", function()
 end)
 vim.keymap.set("n", ";g", function() builtin.live_grep() end)
 vim.keymap.set("n", "\\\\", function() builtin.buffers() end)
-vim.keymap.set("n", ";t", function() builtin.help_tags() end)
+vim.keymap.set("n", ";;;;;;;;;;;;;;;;;;;;;;;;;;;", function() builtin.help_tags() end)
 vim.keymap.set("n", ";;", function() builtin.resume() end)
 vim.keymap.set("n", ";e", function() builtin.diagnostics() end)
+vim.keymap.set("n", ";nw", "<cmd>Telescope neorg switch_workspace<CR>")
 require("telescope").load_extension "ui-select"

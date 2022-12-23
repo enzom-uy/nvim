@@ -43,6 +43,7 @@ cmp.setup {
     end,
   },
   sources = cmp.config.sources {
+    { name = "orgmode" },
     { name = "path" },
     { name = "nvim_lsp" },
     { name = "buffer" },

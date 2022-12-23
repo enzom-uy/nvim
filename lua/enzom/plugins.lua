@@ -50,11 +50,16 @@ local plugins = {
   { "norcalli/nvim-colorizer.lua", event = "BufEnter" },
 
   { "TimUntersberger/neogit", cmd = "Neogit" },
+
   { "lewis6991/gitsigns.nvim", event = "BufEnter" },
+
+  -- Note taking
+  { "iamcco/markdown-preview.nvim", build = function() vim.fn["mkdp#util#install"]() end },
 
   -- Appearance
   { "luisiacc/gruvbox-baby", lazy = false },
   { "shaunsingh/oxocarbon.nvim", lazy = false, enabled = true },
+  { "navarasu/onedark.nvim", lazy = false },
 
   -- QOL
   { "ojroques/nvim-bufdel", event = "BufEnter" },

@@ -2,7 +2,7 @@ vim.g.mapleader = ";"
 local keymap = vim.keymap
 
 --- Git
-keymap.set("n", "<leader>n", ":Neogit<CR>")
+keymap.set("n", "<leader>ng", ":Neogit<CR>")
 
 keymap.set("n", "x", '"_x')
 
@@ -71,5 +71,12 @@ keymap.set("v", "<A-h>", ":MoveHBlock(-1)<CR>")
 
 --- Replace
 
-keymap.set("n", ";rs", ":%s/")
+keymap.set("n", "<leader>rs", ":%s/")
+
+--- Quit
 keymap.set("n", "q", ":q!<CR>")
+
+--- Neorg
+keymap.set("n", ";ta", "<cmd>Neorg gtd views<CR>")
+keymap.set("n", ";tc", "<cmd>Neorg gtd capture<CR>")
+keymap.set("n", ";te", "<cmd>Neorg gtd edit<CR>")

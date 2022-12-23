@@ -15,6 +15,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 vim.opt.winblend = 0
 vim.opt.wildoptions = "pum"
+vim.opt.conceallevel = 2
 vim.opt.pumblend = 5
 vim.opt.background = "dark"
 vim.opt.hlsearch = false
@@ -80,3 +81,5 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
   vim.g["loaded_" .. plugin] = 1
 end
+
+vim.g.vimwiki_table_mappings = 0
