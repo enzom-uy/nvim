@@ -80,3 +80,6 @@ keymap.set("n", "q", ":q!<CR>")
 keymap.set("n", ";ta", "<cmd>Neorg gtd views<CR>")
 keymap.set("n", ";tc", "<cmd>Neorg gtd capture<CR>")
 keymap.set("n", ";te", "<cmd>Neorg gtd edit<CR>")
+
+--- ChatGPT
+keymap.set("n", "<space>g", "<cmd>ChatGPT<CR>")

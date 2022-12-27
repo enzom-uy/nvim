@@ -68,6 +68,11 @@ local plugins = {
 
   -- Utilities
   "nvim-lua/plenary.nvim",
+
+  -- ChatGPT?
+  { "jackMort/ChatGPT.nvim", dependencies = {
+    "MunifTanjim/nui.nvim",
+  } },
 }
 
 require("lazy").setup(plugins)

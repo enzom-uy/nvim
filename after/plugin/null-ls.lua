@@ -23,6 +23,7 @@ null_ls.setup {
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.formatting.markdownlint,
+    null_ls.builtins.formatting.clang_format,
   },
   on_attach = function(client, bufnr)
     if client.server_capabilities.documentFormattingProvider then
