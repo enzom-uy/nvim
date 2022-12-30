@@ -36,6 +36,11 @@ telescope.setup {
       override_file_sorter = true,
     },
   },
+  pickers = {
+    find_files = {
+      theme = "ivy",
+    },
+  },
 }
 
 vim.keymap.set("n", ";f", function()

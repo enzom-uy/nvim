@@ -44,9 +44,6 @@ vim.opt.cc = "100"
 vim.opt.lazyredraw = true
 vim.opt.termguicolors = true
 
-local bufnr = vim.api.nvim_buf_get_name(0)
-print(bufnr, "holaaaaaa")
-
 -- Undercurl
 vim.cmd [[let &t_Cs = "\e[4:3m"]]
 vim.cmd [[let &t_Ce = "\e[4:0m"]]

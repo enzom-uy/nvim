@@ -31,7 +31,7 @@ local plugins = {
 
   -- UI
   "nvim-lualine/lualine.nvim",
-  { "folke/zen-mode.nvim", cmd = "ZenMode" },
+  { "XXiaoA/zen-mode.nvim", cmd = "ZenMode", enabled = true },
   { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" }, tag = "nightly" },
   "akinsho/nvim-bufferline.lua",
   { "stevearc/dressing.nvim", event = "VeryLazy" },
