@@ -4,6 +4,5 @@ node_modules/
 docs
 ginit.vim
 lua/packer_compiled.lua
-ftplugin
 spell
 .github
