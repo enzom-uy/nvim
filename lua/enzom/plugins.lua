@@ -56,10 +56,11 @@ local plugins = {
   -- Note taking
   { "iamcco/markdown-preview.nvim", build = function() vim.fn["mkdp#util#install"]() end },
 
-  -- Appearance
-  { "luisiacc/gruvbox-baby", lazy = false },
-  { "shaunsingh/oxocarbon.nvim", lazy = false, enabled = true },
-  { "navarasu/onedark.nvim", lazy = false },
+  -- Colorschemes
+  { "luisiacc/gruvbox-baby", lazy = false, enabled = false },
+  { "shaunsingh/oxocarbon.nvim", lazy = false, enabled = false },
+  { "navarasu/onedark.nvim", lazy = false, enabled = false },
+  { "folke/tokyonight.nvim", lazy = false, enabled = true },
 
   -- QOL
   { "ojroques/nvim-bufdel", event = "BufEnter" },

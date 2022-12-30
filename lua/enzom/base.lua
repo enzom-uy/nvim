@@ -40,9 +40,12 @@ vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append { "**" } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { "*/node_modules/*" }
 vim.opt.clipboard = "unnamedplus"
-vim.opt.cc = "100"
+vim.opt.cc = "80"
 vim.opt.lazyredraw = true
 vim.opt.termguicolors = true
+
+local bufnr = vim.api.nvim_buf_get_name(0)
+print(bufnr, "holaaaaaa")
 
 -- Undercurl
 vim.cmd [[let &t_Cs = "\e[4:3m"]]
