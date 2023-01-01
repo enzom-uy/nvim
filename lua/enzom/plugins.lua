@@ -45,6 +45,7 @@ local plugins = {
   { "David-Kunz/treesitter-unit", lazy = true },
   { "nvim-telescope/telescope.nvim", event = "VeryLazy" },
   { "nvim-telescope/telescope-ui-select.nvim", event = "VeryLazy" },
+  { "nvim-telescope/telescope-file-browser.nvim" },
   { "windwp/nvim-autopairs", event = "BufEnter" },
   { "windwp/nvim-ts-autotag", event = "BufEnter" },
   { "norcalli/nvim-colorizer.lua", event = "BufEnter" },

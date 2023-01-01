@@ -2,6 +2,7 @@ local status, telescope = pcall(require, "telescope")
 if not status then return end
 local actions = require "telescope.actions"
 local builtin = require "telescope.builtin"
+local fileActions = require("telescope").extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
@@ -11,6 +12,10 @@ telescope.setup {
     mappings = {
       n = {
         ["q"] = actions.close,
+        ["a"] = fileActions.create,
+        ["m"] = fileActions.move,
+        ["d"] = fileActions.remove,
+        ["r"] = fileActions.rename,
       },
       i = {
         ["<C-k>"] = actions.move_selection_previous,
@@ -35,6 +40,10 @@ telescope.setup {
       override_generic_sorter = true,
       override_file_sorter = true,
     },
+    file_browser = {
+      theme = "ivy",
+      hijack_netrw = true,
+    },
   },
   pickers = {
     find_files = {
@@ -50,8 +59,8 @@ vim.keymap.set("n", ";f", function()
 end)
 vim.keymap.set("n", ";g", function() builtin.live_grep() end)
 vim.keymap.set("n", "\\\\", function() builtin.buffers() end)
-vim.keymap.set("n", ";;;;;;;;;;;;;;;;;;;;;;;;;;;", function() builtin.help_tags() end)
-vim.keymap.set("n", ";;", function() builtin.resume() end)
+vim.keymap.set("n", "<leader>nn", "<cmd>Telescope file_browser<CR>jk")
+vim.keymap.set("n", "<leader>r;", function() builtin.resume() end)
 vim.keymap.set("n", ";e", function() builtin.diagnostics() end)
-vim.keymap.set("n", ";nw", "<cmd>Telescope neorg switch_workspace<CR>")
 require("telescope").load_extension "ui-select"
+require("telescope").load_extension "file_browser"
