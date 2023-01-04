@@ -18,7 +18,6 @@ lsp.set_preferences {
     info = "I",
   },
 }
-lsp.setup()
 
 lsp.ensure_installed {
   "tsserver",
@@ -26,6 +25,8 @@ lsp.ensure_installed {
   "sumneko_lua",
   "marksman",
 }
+
+lsp.setup()
 
 vim.diagnostic.config {
   virtual_text = true,

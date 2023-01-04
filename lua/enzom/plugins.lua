@@ -46,6 +46,10 @@ local plugins = {
   { "nvim-telescope/telescope.nvim", event = "VeryLazy" },
   { "nvim-telescope/telescope-ui-select.nvim", event = "VeryLazy" },
   { "nvim-telescope/telescope-file-browser.nvim" },
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "nightly",
+  },
   { "windwp/nvim-autopairs", event = "BufEnter" },
   { "windwp/nvim-ts-autotag", event = "BufEnter" },
   { "norcalli/nvim-colorizer.lua", event = "BufEnter" },
