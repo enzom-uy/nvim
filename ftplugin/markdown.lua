@@ -4,4 +4,4 @@ vim.opt.cc = "80"
 
 local searchLinks = ":/(.*.md)<CR>n"
 
-keymap.set("n", "<leader>l", searchLinks)
+keymap.set("n", "<leader>l", searchLinks, { silent = true })
