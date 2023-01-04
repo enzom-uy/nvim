@@ -4,6 +4,11 @@ local actions = require "telescope.actions"
 local builtin = require "telescope.builtin"
 local fileActions = require("telescope").extensions.file_browser.actions
 
+require("telescope").load_extension "ui-select"
+require("telescope").load_extension "file_browser"
+
+local function telescope_buffer_dir() return vim.fn.expand "%:p:h" end
+
 telescope.setup {
   defaults = {
     file_previewer = require("telescope.previewers").vim_buffer_cat.new,
@@ -61,5 +66,20 @@ vim.keymap.set("n", ";g", function() builtin.live_grep() end)
 vim.keymap.set("n", "\\\\", function() builtin.buffers() end)
 vim.keymap.set("n", "<leader>r;", function() builtin.resume() end)
 vim.keymap.set("n", ";e", function() builtin.diagnostics() end)
-require("telescope").load_extension "ui-select"
-require("telescope").load_extension "file_browser"
+vim.keymap.set(
+  "n",
+  ";nn",
+  function()
+    telescope.extensions.file_browser.file_browser {
+      path = "%:p:h",
+      cwd = telescope_buffer_dir(),
+      respect_gitignore = false,
+      hidden = true,
+      grouped = true,
+      previewer = false,
+      theme = "ivy",
+      initial_mode = "normal",
+      layout_config = { height = 15 },
+    }
+  end
+)
