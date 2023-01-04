@@ -4,7 +4,6 @@ if not status then return end
 ts.setup {
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = { "org" },
   },
   indent = {
     enable = true,
@@ -27,6 +26,8 @@ ts.setup {
     enable = true,
   },
 }
+
+require("nvim-ts-autotag").setup()
 
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }

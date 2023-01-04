@@ -60,11 +60,12 @@ telescope.setup {
 vim.keymap.set("n", ";f", function()
   builtin.find_files {
     hidden = true,
+    path = "%:p:h",
   }
 end)
 vim.keymap.set("n", ";g", function() builtin.live_grep() end)
 vim.keymap.set("n", "\\\\", function() builtin.buffers() end)
-vim.keymap.set("n", "<leader>r;", function() builtin.resume() end)
+vim.keymap.set("n", ";r;", function() builtin.resume() end)
 vim.keymap.set("n", ";e", function() builtin.diagnostics() end)
 vim.keymap.set(
   "n",
