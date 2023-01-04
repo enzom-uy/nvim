@@ -11,12 +11,17 @@ ts.setup {
   },
   ensure_installed = {
     "tsx",
+    "typescript",
+    "javascript",
+    "bash",
     "json",
     "css",
     "html",
     "lua",
     "prisma",
-    "org",
+    "astro",
+    "lua",
+    "markdown",
   },
   autotag = {
     enable = true,

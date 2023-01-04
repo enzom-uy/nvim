@@ -59,7 +59,6 @@ vim.keymap.set("n", ";f", function()
 end)
 vim.keymap.set("n", ";g", function() builtin.live_grep() end)
 vim.keymap.set("n", "\\\\", function() builtin.buffers() end)
-vim.keymap.set("n", "<leader>nn", "<cmd>Telescope file_browser<CR>jk")
 vim.keymap.set("n", "<leader>r;", function() builtin.resume() end)
 vim.keymap.set("n", ";e", function() builtin.diagnostics() end)
 require("telescope").load_extension "ui-select"

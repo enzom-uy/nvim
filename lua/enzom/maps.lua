@@ -83,3 +83,5 @@ keymap.set("n", ";te", "<cmd>Neorg gtd edit<CR>")
 
 --- ChatGPT
 keymap.set("n", "<space>g", "<cmd>ChatGPT<CR>")
+
+keymap.set("n", "<leader>nn", "<cmd>Telescope file_browser<CR>jk")
