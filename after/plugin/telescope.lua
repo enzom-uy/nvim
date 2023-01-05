@@ -74,7 +74,7 @@ vim.keymap.set(
     telescope.extensions.file_browser.file_browser {
       path = "%:p:h",
       cwd = telescope_buffer_dir(),
-      respect_gitignore = false,
+      respect_gitignore = true,
       hidden = true,
       grouped = true,
       previewer = false,

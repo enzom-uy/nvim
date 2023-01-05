@@ -15,6 +15,7 @@ null_ls.setup {
         "html",
         "json",
         "prisma",
+        "astro",
       },
     },
     null_ls.builtins.diagnostics.eslint_d.with {
