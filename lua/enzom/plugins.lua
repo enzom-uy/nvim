@@ -52,6 +52,7 @@ local plugins = {
   },
   { "windwp/nvim-autopairs", event = "BufEnter" },
   { "windwp/nvim-ts-autotag", event = "BufEnter" },
+  { "mrjones2014/nvim-ts-rainbow" },
   { "norcalli/nvim-colorizer.lua", event = "BufEnter" },
 
   { "TimUntersberger/neogit", cmd = "Neogit" },
