@@ -35,6 +35,8 @@ telescope.setup {
       "package-lock",
       ".next/",
       "venv/",
+      ".dropbox",
+      ".dropbox.cache",
     },
   },
   extensions = {
