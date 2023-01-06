@@ -22,7 +22,6 @@ null_ls.setup {
       diagnostics_format = "[eslint] #{m}\n(#{c})",
     },
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.formatting.markdownlint,
     null_ls.builtins.formatting.clang_format,
   },

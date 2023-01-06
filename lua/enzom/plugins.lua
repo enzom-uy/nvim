@@ -61,6 +61,7 @@ local plugins = {
   -- Note taking
   { "iamcco/markdown-preview.nvim", build = function() vim.fn["mkdp#util#install"]() end, ft = "markdown" },
   { "jghauser/follow-md-links.nvim", ft = "markdown" },
+  { "dhruvasagar/vim-table-mode" },
 
   -- Colorschemes
   { "luisiacc/gruvbox-baby", lazy = false, enabled = false },

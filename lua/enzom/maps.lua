@@ -76,10 +76,8 @@ keymap.set("n", "<leader>rs", ":%s/")
 --- Quit
 keymap.set("n", "q", ":q!<CR>")
 
---- Neorg
-keymap.set("n", ";ta", "<cmd>Neorg gtd views<CR>")
-keymap.set("n", ";tc", "<cmd>Neorg gtd capture<CR>")
-keymap.set("n", ";te", "<cmd>Neorg gtd edit<CR>")
+--- Markdown table
+keymap.set("n", ";ta", "<cmd>TableModeRealign<CR><cmd>w<CR>")
 
 --- ChatGPT
 keymap.set("n", "<space>g", "<cmd>ChatGPT<CR>")
