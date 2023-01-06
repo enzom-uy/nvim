@@ -6,3 +6,4 @@ ginit.vim
 lua/packer_compiled.lua
 spell
 .github
+lazy-lock.json
