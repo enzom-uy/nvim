@@ -34,7 +34,6 @@ local plugins = {
   { "XXiaoA/zen-mode.nvim", cmd = "ZenMode", enabled = true },
   { "nvim-tree/nvim-web-devicons" },
   "akinsho/nvim-bufferline.lua",
-  { "stevearc/dressing.nvim", event = "VeryLazy" },
   "goolord/alpha-nvim",
 
   -- Tools
@@ -68,8 +67,9 @@ local plugins = {
   { "shaunsingh/oxocarbon.nvim", lazy = false, enabled = false },
   { "navarasu/onedark.nvim", lazy = false, enabled = true },
   {
-      'svrana/neosolarized.nvim',
-      dependencies = { 'tjdevries/colorbuddy.nvim' }},
+    "svrana/neosolarized.nvim",
+    dependencies = { "tjdevries/colorbuddy.nvim" },
+  },
 
   -- QOL
   { "ojroques/nvim-bufdel", event = "BufEnter" },
