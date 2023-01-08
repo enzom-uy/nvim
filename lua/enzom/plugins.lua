@@ -66,8 +66,10 @@ local plugins = {
   -- Colorschemes
   { "luisiacc/gruvbox-baby", lazy = false, enabled = false },
   { "shaunsingh/oxocarbon.nvim", lazy = false, enabled = false },
-  { "navarasu/onedark.nvim", lazy = false, enabled = false },
-  { "folke/tokyonight.nvim", lazy = false, enabled = true },
+  { "navarasu/onedark.nvim", lazy = false, enabled = true },
+  {
+      'svrana/neosolarized.nvim',
+      dependencies = { 'tjdevries/colorbuddy.nvim' }},
 
   -- QOL
   { "ojroques/nvim-bufdel", event = "BufEnter" },
