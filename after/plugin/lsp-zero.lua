@@ -9,7 +9,7 @@ lsp.set_preferences {
   set_lsp_keymaps = false,
   configure_diagnostics = true,
   cmp_capabilities = true,
-  manage_nvim_cmp = true,
+  manage_nvim_cmp = false,
   call_servers = "local",
   sign_icons = {
     error = "E",
@@ -18,6 +18,18 @@ lsp.set_preferences {
     info = "I",
   },
 }
+
+lsp.on_attach(function(client, bufnr)
+  local opts = { buffer = bufnr, noremap = true, silent = true }
+  local bind = vim.keymap.set
+
+  bind("n", "<S-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+  bind("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
+  bind("n", "gd", "<Cmd>Lspsaga lsp_finder<CR>", opts)
+  bind("i", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", opts)
+  bind("n", "gp", "<Cmd>Lspsaga preview_definition<CR>", opts)
+  bind("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
+end)
 
 lsp.ensure_installed {
   "tsserver",

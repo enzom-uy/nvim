@@ -74,7 +74,7 @@ keymap.set("v", "<A-h>", ":MoveHBlock(-1)<CR>")
 keymap.set("n", "<leader>rs", ":%s/")
 
 --- Quit
-keymap.set("n", "q", ":q!<CR>")
+keymap.set("n", "<leader>q", ":q<CR>")
 
 --- Markdown table
 keymap.set("n", ";ta", "<cmd>TableModeRealign<CR><cmd>w<CR>")
