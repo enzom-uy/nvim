@@ -27,8 +27,6 @@ keymap.set("n", "<C-d>", ":BufDel<CR>")
 keymap.set("n", "<C-j>", "<C-d>")
 keymap.set("n", "<C-k>", "<C-u>")
 keymap.set("n", "<C-s>", ":w<CR>")
-keymap.set("n", "md", ":Lspsaga show_line_diagnostics<CR>")
-keymap.set("n", "<S-j>", ":Lspsaga diagnostic_jump_next<CR>")
 
 keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>")
 keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>")

@@ -4,7 +4,7 @@ local plugins = {
   "hrsh7th/cmp-nvim-lsp",
   "neovim/nvim-lspconfig",
   "hrsh7th/nvim-cmp",
-  "glepnir/lspsaga.nvim",
+  { "glepnir/lspsaga.nvim", event = "BufRead" },
   "L3MON4D3/LuaSnip",
   { "nvim-treesitter/nvim-treesitter", cmd = "TSUpdate" },
   {
@@ -52,7 +52,8 @@ local plugins = {
   { "windwp/nvim-autopairs", event = "BufEnter" },
   { "windwp/nvim-ts-autotag", event = "BufEnter" },
   { "mrjones2014/nvim-ts-rainbow" },
-  { "norcalli/nvim-colorizer.lua", event = "BufEnter" },
+  { "NvChad/nvim-colorizer.lua" },
+  { "roobert/tailwindcss-colorizer-cmp.nvim" },
 
   { "TimUntersberger/neogit", cmd = "Neogit" },
   { "lewis6991/gitsigns.nvim", event = "BufEnter" },
