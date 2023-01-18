@@ -58,14 +58,6 @@ local plugins = {
   { "windwp/nvim-ts-autotag", event = "BufEnter" },
   { "mrjones2014/nvim-ts-rainbow" },
   { "NvChad/nvim-colorizer.lua" },
-  {
-    "roobert/tailwindcss-colorizer-cmp.nvim",
-    config = function()
-      require("tailwindcss-colorizer-cmp").setup {
-        color_square_width = 2,
-      }
-    end,
-  },
   { "rest-nvim/rest.nvim" },
 
   { "TimUntersberger/neogit", cmd = "Neogit" },
