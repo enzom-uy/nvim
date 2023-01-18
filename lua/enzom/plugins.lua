@@ -13,6 +13,11 @@ local plugins = {
     config = function() require("treesitter-context").setup() end,
   },
   {
+    "danymat/neogen",
+    config = true,
+    version = "*",
+  },
+  {
     "VonHeikemen/lsp-zero.nvim",
     dependencies = {
       "williamboman/mason.nvim",
@@ -53,7 +58,15 @@ local plugins = {
   { "windwp/nvim-ts-autotag", event = "BufEnter" },
   { "mrjones2014/nvim-ts-rainbow" },
   { "NvChad/nvim-colorizer.lua" },
-  { "roobert/tailwindcss-colorizer-cmp.nvim" },
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup {
+        color_square_width = 2,
+      }
+    end,
+  },
+  { "rest-nvim/rest.nvim" },
 
   { "TimUntersberger/neogit", cmd = "Neogit" },
   { "lewis6991/gitsigns.nvim", event = "BufEnter" },

@@ -37,6 +37,8 @@ telescope.setup {
       "venv/",
       ".dropbox",
       ".dropbox.cache",
+      "dist/",
+      "build/",
     },
   },
   extensions = {
