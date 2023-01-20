@@ -1,4 +1,4 @@
---[[ vim.opt.background = "dark" ]]
+vim.opt.background = "dark"
 local status, n = pcall(require, "neosolarized")
 if not status then return end
 

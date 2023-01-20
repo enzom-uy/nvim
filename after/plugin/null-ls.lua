@@ -25,7 +25,7 @@ null_ls.setup {
     null_ls.builtins.formatting.markdownlint,
     null_ls.builtins.formatting.clang_format,
   },
-  on_attach = function(client, bufnr)
+  on_attach = function(client)
     if client.server_capabilities.documentFormattingProvider then
       vim.api.nvim_clear_autocmds { buffer = 0, group = augroup_format }
       vim.api.nvim_create_autocmd("BufWritePre", {
