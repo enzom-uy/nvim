@@ -2,7 +2,7 @@ require("lspsaga").setup {
   ui = {
     theme = "round",
     border = "rounded",
-    winblend = 5,
+    winblend = 20,
     colors = {
       --float window normal bakcground color
       normal_bg = "#000000",
