@@ -1,21 +1,14 @@
-require("lspsaga").setup {
+local status, saga = pcall(require, "lspsaga")
+if not status then return end
+
+saga.setup {
   ui = {
-    theme = "round",
+    winblend = 10,
     border = "rounded",
-    winblend = 20,
     colors = {
-      --float window normal bakcground color
-      normal_bg = "#000000",
-      --title background color
-      title_bg = "#000000",
+      normal_bg = "#002b36",
     },
-    expand = "",
-    collapse = "",
-    preview = " ",
-    code_action = "💡",
-    diagnostic = "",
-    incoming = " ",
-    outgoing = " ",
+    title = false,
   },
 }
 local keymap = vim.keymap

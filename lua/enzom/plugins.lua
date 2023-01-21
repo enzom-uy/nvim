@@ -69,9 +69,6 @@ local plugins = {
   { "dhruvasagar/vim-table-mode" },
 
   -- Colorschemes
-  { "luisiacc/gruvbox-baby", lazy = false, enabled = false },
-  { "shaunsingh/oxocarbon.nvim", lazy = false, enabled = false },
-  { "navarasu/onedark.nvim", lazy = false, enabled = true },
   {
     "svrana/neosolarized.nvim",
     dependencies = { "tjdevries/colorbuddy.nvim" },
@@ -84,11 +81,6 @@ local plugins = {
 
   -- Utilities
   "nvim-lua/plenary.nvim",
-
-  -- ChatGPT?
-  { "jackMort/ChatGPT.nvim", dependencies = {
-    "MunifTanjim/nui.nvim",
-  } },
 }
 
 require("lazy").setup(plugins)

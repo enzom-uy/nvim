@@ -91,6 +91,11 @@ lsp.setup_nvim_cmp {
   },
 }
 
+vim.cmd [[
+  set completeopt=menuone,noinsert,noselect
+  highlight! default link CmpItemKind CmpItemMenuDefault
+]]
+
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, noremap = true, silent = true }
   local bind = vim.keymap.set
