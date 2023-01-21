@@ -31,8 +31,6 @@ keymap.set("n", "<C-s>", ":w<CR>")
 keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>")
 keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>")
 
-keymap.set("n", "<leader>af", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-
 -- Save with root permission (not working for now)
 --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
 

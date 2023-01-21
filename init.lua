@@ -1,7 +1,4 @@
-require "enzom.base"
-
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
     "git",
@@ -14,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.runtimepath:prepend(lazypath)
-
 require "enzom.plugins"
-
+require "enzom.base"
+require "enzom.highlight"
 require "enzom.maps"

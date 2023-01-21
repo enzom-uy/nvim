@@ -36,7 +36,6 @@ local plugins = {
 
   -- UI
   "nvim-lualine/lualine.nvim",
-  { "XXiaoA/zen-mode.nvim", cmd = "ZenMode", enabled = true },
   { "nvim-tree/nvim-web-devicons" },
   "akinsho/nvim-bufferline.lua",
   "goolord/alpha-nvim",

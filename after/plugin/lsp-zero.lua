@@ -2,6 +2,7 @@ local lsp = require "lsp-zero"
 local lspkind = require "lspkind"
 local cmp = require "cmp"
 local ls = require "luasnip"
+local protocol = require "vim.lsp.protocol"
 
 local function formatForTailwindCSS(entry, vim_item)
   if vim_item.kind == "Color" and entry.completion_item.documentation then
@@ -21,14 +22,13 @@ end
 
 lsp.preset "recommended"
 
-lsp.nvim_workspace()
 lsp.set_preferences {
   suggest_lsp_servers = true,
   setup_servers_on_start = true,
   set_lsp_keymaps = false,
   configure_diagnostics = true,
-  cmp_capabilities = true,
-  manage_nvim_cmp = true,
+  cmp_capabilities = false,
+  manage_nvim_cmp = false,
   call_servers = "local",
   sign_icons = {
     error = "E",
@@ -80,9 +80,17 @@ lsp.setup_nvim_cmp {
       end
     end,
   },
+  window = {
+    completion = {
+      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+      col_offset = -3,
+      side_padding = 0,
+    },
+  },
   formatting = {
     format = lspkind.cmp_format {
       maxwidth = 50,
+      mode = "symbol_text",
       before = function(entry, vim_item)
         vim_item = formatForTailwindCSS(entry, vim_item)
         return vim_item
@@ -96,16 +104,25 @@ vim.cmd [[
   highlight! default link CmpItemKind CmpItemMenuDefault
 ]]
 
-lsp.on_attach(function(client, bufnr)
-  local opts = { buffer = bufnr, noremap = true, silent = true }
-  local bind = vim.keymap.set
+lsp.on_attach(function()
+  local diagnostic = require "lspsaga.diagnostic"
+  local opts = { noremap = true, silent = true }
+  vim.keymap.set("n", "<S-j>", diagnostic.goto_next, opts)
+  vim.keymap.set("n", "gl", diagnostic.show_diagnostics, opts)
+  vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
+  vim.keymap.set("n", "gd", "<Cmd>Lspsaga lsp_finder<CR>", opts)
+  -- vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+  vim.keymap.set("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+  vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
+  vim.keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
 
-  bind("n", "<S-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-  bind("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
-  bind("n", "gd", "<Cmd>Lspsaga lsp_finder<CR>", opts)
-  bind("i", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", opts)
-  bind("n", "gp", "<Cmd>Lspsaga preview_definition<CR>", opts)
-  bind("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
+  -- code action
+  local codeaction = require "lspsaga.codeaction"
+  vim.keymap.set("n", "<leader>af", function() codeaction:code_action() end, { silent = true })
+  vim.keymap.set("v", "<leader>af", function()
+    vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-U>", true, false, true))
+    codeaction:range_code_action()
+  end, { silent = true })
 end)
 
 lsp.ensure_installed {
@@ -115,7 +132,49 @@ lsp.ensure_installed {
   "marksman",
 }
 
-vim.diagnostic.config {
-  virtual_text = true,
-}
+lsp.nvim_workspace()
 lsp.setup()
+
+vim.diagnostic.config {
+  virtual_text = {
+    prefix = "●",
+  },
+  update_in_insert = false,
+  float = {
+    source = "always", -- Or "if_many"
+  },
+}
+
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
+protocol.CompletionItemKind = {
+  "", -- Text
+  "", -- Method
+  "", -- Function
+  "", -- Constructor
+  "", -- Field
+  "", -- Variable
+  "", -- Class
+  "ﰮ", -- Interface
+  "", -- Module
+  "", -- Property
+  "", -- Unit
+  "", -- Value
+  "", -- Enum
+  "", -- Keyword
+  "﬌", -- Snippet
+  "", -- Color
+  "", -- File
+  "", -- Reference
+  "", -- Folder
+  "", -- EnumMember
+  "", -- Constant
+  "", -- Struct
+  "", -- Event
+  "ﬦ", -- Operator
+  "", -- TypeParameter
+}
