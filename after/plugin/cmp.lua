@@ -1,6 +1,7 @@
 local status, cmp = pcall(require, "cmp")
 if not status then return end
 local lspkind = require "lspkind"
+local ls = require "luasnip"
 
 local function formatForTailwindCSS(entry, vim_item)
   if vim_item.kind == "Color" and entry.completion_item.documentation then
@@ -58,6 +59,8 @@ cmp.setup {
   sources = cmp.config.sources {
     { name = "nvim_lsp" },
     { name = "buffer" },
+    { name = "luasnip" },
+    { name = "nvim_lua" },
   },
   formatting = {
     format = lspkind.cmp_format {
