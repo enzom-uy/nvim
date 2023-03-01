@@ -1,25 +1,33 @@
-local plugins = {
-  -- LSP, autocompletion and Treesitter stuff.
-  "onsails/lspkind-nvim",
-  "hrsh7th/cmp-nvim-lsp",
-  "neovim/nvim-lspconfig",
-  "hrsh7th/nvim-cmp",
-  { "glepnir/lspsaga.nvim", event = "BufRead" },
-  "L3MON4D3/LuaSnip",
-  { "nvim-treesitter/nvim-treesitter", cmd = "TSUpdate" },
-  {
+local status, packer = pcall(require, "packer")
+if not status then
+  print "Packer is not installed"
+  return
+end
+
+vim.cmd [[packadd packer.nvim]]
+
+packer.startup(function(use)
+  -- Packer can manage itself
+  use "wbthomason/packer.nvim"
+  use "onsails/lspkind-nvim"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "neovim/nvim-lspconfig"
+  use "hrsh7th/nvim-cmp"
+  use { "glepnir/lspsaga.nvim" }
+  use "L3MON4D3/LuaSnip"
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use {
     "nvim-treesitter/nvim-treesitter-context",
-    event = "BufReadPre",
     config = function() require("treesitter-context").setup() end,
-  },
-  {
+  }
+  use {
     "danymat/neogen",
     config = true,
-    version = "*",
-  },
-  {
+    tag = "*",
+  }
+  use {
     "VonHeikemen/lsp-zero.nvim",
-    dependencies = {
+    requires = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
@@ -29,57 +37,46 @@ local plugins = {
       "hrsh7th/cmp-nvim-lua",
       "rafamadriz/friendly-snippets",
     },
-  },
-
+  }
   -- Formatting
-  { "jose-elias-alvarez/null-ls.nvim", after = "BufEnter" },
-
+  use { "jose-elias-alvarez/null-ls.nvim" }
   -- UI
-  "nvim-lualine/lualine.nvim",
-  { "nvim-tree/nvim-web-devicons" },
-  "akinsho/nvim-bufferline.lua",
-  "goolord/alpha-nvim",
-
+  use "nvim-lualine/lualine.nvim"
+  use { "nvim-tree/nvim-web-devicons" }
+  use "akinsho/nvim-bufferline.lua"
+  use "goolord/alpha-nvim"
   -- Tools
-  { "numToStr/Comment.nvim", event = "BufEnter" },
-  { "kylechui/nvim-surround", event = "BufEnter" },
-  { "JoosepAlviste/nvim-ts-context-commentstring", event = "BufEnter" },
-  { "mbbill/undotree", event = "BufEnter" },
-  { "David-Kunz/treesitter-unit", lazy = true },
-  { "nvim-telescope/telescope.nvim", event = "VeryLazy" },
-  { "nvim-telescope/telescope-ui-select.nvim", event = "VeryLazy" },
-  { "nvim-telescope/telescope-file-browser.nvim" },
-  {
+  use { "numToStr/Comment.nvim" }
+  use { "kylechui/nvim-surround" }
+  use { "JoosepAlviste/nvim-ts-context-commentstring" }
+  use { "mbbill/undotree" }
+  use { "David-Kunz/treesitter-unit" }
+  use { "nvim-telescope/telescope.nvim" }
+  use { "nvim-telescope/telescope-ui-select.nvim" }
+  use { "nvim-telescope/telescope-file-browser.nvim" }
+  use {
     "nvim-tree/nvim-tree.lua",
-    version = "nightly",
-  },
-  { "windwp/nvim-autopairs", event = "BufEnter" },
-  { "windwp/nvim-ts-autotag", event = "BufEnter" },
-  { "mrjones2014/nvim-ts-rainbow" },
-  { "NvChad/nvim-colorizer.lua" },
-  { "rest-nvim/rest.nvim" },
-
-  { "TimUntersberger/neogit", cmd = "Neogit" },
-  { "lewis6991/gitsigns.nvim", event = "BufEnter" },
-
+    tag = "nightly",
+  }
+  use { "windwp/nvim-autopairs" }
+  use { "windwp/nvim-ts-autotag" }
+  use { "mrjones2014/nvim-ts-rainbow" }
+  use { "NvChad/nvim-colorizer.lua" }
+  use { "rest-nvim/rest.nvim" }
+  use { "lewis6991/gitsigns.nvim" }
   -- Note taking
-  { "iamcco/markdown-preview.nvim", build = function() vim.fn["mkdp#util#install"]() end, ft = "markdown" },
-  { "jghauser/follow-md-links.nvim", ft = "markdown" },
-  { "dhruvasagar/vim-table-mode" },
-
+  use { "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, ft = "markdown" }
+  use { "jghauser/follow-md-links.nvim", ft = "markdown" }
+  use { "dhruvasagar/vim-table-mode" }
   -- Colorschemes
-  {
+  use {
     "svrana/neosolarized.nvim",
-    dependencies = { "tjdevries/colorbuddy.nvim" },
-  },
-
+    requires = { "tjdevries/colorbuddy.nvim" },
+  }
   -- QOL
-  { "ojroques/nvim-bufdel", event = "BufEnter" },
-  { "fedepujol/move.nvim", event = "BufEnter" },
-  { "mrjones2014/smart-splits.nvim", event = "VeryLazy" },
-
+  use { "ojroques/nvim-bufdel" }
+  use { "fedepujol/move.nvim" }
+  use { "mrjones2014/smart-splits.nvim" }
   -- Utilities
-  "nvim-lua/plenary.nvim",
-}
-
-require("lazy").setup(plugins)
+  use "nvim-lua/plenary.nvim"
+end)
