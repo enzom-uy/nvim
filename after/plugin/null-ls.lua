@@ -12,7 +12,20 @@ end
 
 null_ls.setup {
   sources = {
-    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.prettierd.with {
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "css",
+        "scss",
+        "html",
+        "json",
+        "yaml",
+        "astro",
+      },
+    },
     null_ls.builtins.diagnostics.eslint_d.with {
       diagnostics_format = "[eslint] #{m}\n(#{c})",
     },
