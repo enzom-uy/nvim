@@ -63,6 +63,7 @@ packer.startup(function(use)
   use { "mrjones2014/nvim-ts-rainbow" }
   use { "NvChad/nvim-colorizer.lua" }
   use { "rest-nvim/rest.nvim" }
+  use { "TimUntersberger/neogit", cmd = "Neogit" }
   use { "lewis6991/gitsigns.nvim" }
   -- Note taking
   use { "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, ft = "markdown" }
