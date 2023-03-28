@@ -1,9 +1,6 @@
 vim.g.mapleader = ";"
 local keymap = vim.keymap
 
---- Git
-keymap.set("n", "<leader>ng", ":Neogit<CR>")
-
 keymap.set("n", "x", '"_x')
 
 -- Increment/decrement
