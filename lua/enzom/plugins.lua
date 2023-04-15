@@ -63,8 +63,16 @@ packer.startup(function(use)
   use { "mrjones2014/nvim-ts-rainbow" }
   use { "NvChad/nvim-colorizer.lua" }
   use { "rest-nvim/rest.nvim" }
-  use { "TimUntersberger/neogit", cmd = "Neogit" }
+  use { "TimUntersberger/neogit" }
   use { "lewis6991/gitsigns.nvim" }
+  use {
+    "jackMort/ChatGPT.nvim",
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+  }
   -- Note taking
   use { "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, ft = "markdown" }
   use { "jghauser/follow-md-links.nvim", ft = "markdown" }

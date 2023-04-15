@@ -2,6 +2,7 @@ local status, telescope = pcall(require, "telescope")
 if not status then return end
 local actions = require "telescope.actions"
 local builtin = require "telescope.builtin"
+local utils = require "telescope.utils"
 local fileActions = require("telescope").extensions.file_browser.actions
 
 require("telescope").load_extension "ui-select"
@@ -64,10 +65,10 @@ telescope.setup {
 vim.keymap.set("n", ";f", function()
   builtin.find_files {
     hidden = true,
-    path = "%:p:h",
+    no_ignore = false,
   }
 end)
-vim.keymap.set("n", ";g", function() builtin.live_grep() end)
+vim.keymap.set("n", ";g", function() builtin.live_grep {} end)
 vim.keymap.set("n", "\\\\", function() builtin.buffers() end)
 vim.keymap.set("n", ";r;", function() builtin.resume() end)
 vim.keymap.set("n", ";e", function() builtin.diagnostics() end)
@@ -77,7 +78,7 @@ vim.keymap.set(
   function()
     telescope.extensions.file_browser.file_browser {
       path = "%:p:h",
-      cwd = telescope_buffer_dir(),
+      cwd = "%:p:h",
       respect_gitignore = true,
       hidden = true,
       grouped = true,

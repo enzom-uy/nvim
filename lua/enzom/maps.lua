@@ -74,3 +74,6 @@ keymap.set("n", ";ta", "<cmd>TableModeRealign<CR><cmd>w<CR>")
 
 --- ChatGPT
 keymap.set("n", "<space>g", "<cmd>ChatGPT<CR>")
+
+--- Git
+keymap.set("n", "<leader>ng", ":Neogit<CR>")

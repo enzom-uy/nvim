@@ -44,8 +44,8 @@ require("smart-splits").setup {
     "BufEnter",
     "WinEnter",
   },
-  -- enable or disable the tmux integration
-  tmux_integration = true,
-  -- disable tmux navigation if current tmux pane is zoomed
-  disable_tmux_nav_when_zoomed = true,
+  -- enable or disable the multiplexer integration
+  multiplexer_integration = true,
+  -- disable multiplexer navigation if current tmux pane is zoomed
+  disable_tmus_nav_when_zoomed = true,
 }
