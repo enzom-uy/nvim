@@ -29,6 +29,7 @@ ts.setup {
     "astro",
     "lua",
     "markdown",
+    "markdown_inline",
   },
   autotag = {
     enable = true,
