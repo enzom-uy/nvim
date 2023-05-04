@@ -44,6 +44,10 @@ packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use { "nvim-tree/nvim-web-devicons" }
   use "akinsho/nvim-bufferline.lua"
+  use {
+    "romgrk/barbar.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+  }
   use "goolord/alpha-nvim"
   -- Tools
   use { "numToStr/Comment.nvim" }
@@ -73,6 +77,10 @@ packer.startup(function(use)
   use {
     "svrana/neosolarized.nvim",
     requires = { "tjdevries/colorbuddy.nvim" },
+  }
+  use {
+    "AlexvZyl/nordic.nvim",
+    branch = "main",
   }
   -- QOL
   use { "ojroques/nvim-bufdel" }
