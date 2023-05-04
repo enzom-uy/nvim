@@ -13,7 +13,7 @@ nvim_tree_events.subscribe("TreeClose", function() bufferline_api.set_offset(0) 
 
 -- Setup.
 require("bufferline").setup {
-  animation = true,
+  animation = false,
   auto_hide = false,
   highlight_inactive_file_icons = true,
   icons_diagnostics = {
