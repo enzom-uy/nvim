@@ -38,8 +38,10 @@ packer.startup(function(use)
       "rafamadriz/friendly-snippets",
     },
   }
+
   -- Formatting
   use { "jose-elias-alvarez/null-ls.nvim" }
+
   -- UI
   use "nvim-lualine/lualine.nvim"
   use { "nvim-tree/nvim-web-devicons" }
@@ -49,6 +51,7 @@ packer.startup(function(use)
     requires = "nvim-tree/nvim-web-devicons",
   }
   use "goolord/alpha-nvim"
+
   -- Tools
   use { "numToStr/Comment.nvim" }
   use { "kylechui/nvim-surround" }
@@ -69,19 +72,10 @@ packer.startup(function(use)
   use { "rest-nvim/rest.nvim" }
   use { "TimUntersberger/neogit" }
   use { "lewis6991/gitsigns.nvim" }
-  -- Note taking
-  use { "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, ft = "markdown" }
-  use { "jghauser/follow-md-links.nvim", ft = "markdown" }
-  use { "dhruvasagar/vim-table-mode" }
+
   -- Colorschemes
-  use {
-    "svrana/neosolarized.nvim",
-    requires = { "tjdevries/colorbuddy.nvim" },
-  }
-  use {
-    "AlexvZyl/nordic.nvim",
-    branch = "main",
-  }
+  use { "catppuccin/nvim", as = "catppuccin" }
+
   -- QOL
   use { "ojroques/nvim-bufdel" }
   use { "fedepujol/move.nvim" }

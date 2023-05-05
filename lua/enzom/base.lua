@@ -52,6 +52,9 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   command = "set nopaste",
 })
 
+-- Load the scheme.
+vim.cmd.colorscheme "catppuccin-mocha"
+
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { "r" }
 
