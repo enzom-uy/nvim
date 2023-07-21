@@ -1,5 +1,6 @@
 local plugins = {
 	{ "numToStr/Comment.nvim" },
+	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -32,7 +33,7 @@ local plugins = {
 			"windwp/nvim-ts-autotag",
 		},
 	},
-	{ "glepnir/lspsaga.nvim" },
+	{ "nvimdev/lspsaga.nvim", commit = "2dfb179" },
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		dependencies = {
@@ -48,7 +49,15 @@ local plugins = {
 			"L3MON4D3/LuaSnip",
 		},
 	},
-	{ "mhartington/formatter.nvim" },
+	{ "jose-elias-alvarez/null-ls.nvim" },
+	{
+		"jay-babu/mason-null-ls.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"williamboman/mason.nvim",
+			"jose-elias-alvarez/null-ls.nvim",
+		},
+	},
 
 	-- UI
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },

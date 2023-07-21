@@ -25,8 +25,8 @@ keymap.set("n", "<C-j>", "<C-d>")
 keymap.set("n", "<C-k>", "<C-u>")
 keymap.set("n", "<C-s>", ":w<CR>")
 
-keymap.set("n", "<Tab>", "<Cmd>bnext<CR>")
-keymap.set("n", "<S-Tab>", "<Cmd>bprevious<CR>")
+keymap.set("n", "<S-l>", "<Cmd>bnext<CR>")
+keymap.set("n", "<S-h>", "<Cmd>bprevious<CR>")
 
 -- Save with root permission (not working for now)
 --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
