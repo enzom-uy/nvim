@@ -7,6 +7,7 @@ local plugins = {
 			require("gitsigns").setup({})
 		end,
 	},
+	{ "NeogitOrg/neogit", dependencies = "nvim-lua/plenary.nvim", config = true },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{ "kylechui/nvim-surround" },
 	{ "mrjones2014/smart-splits.nvim" },
@@ -31,6 +32,7 @@ local plugins = {
 			"nvim-treesitter/nvim-treesitter-context",
 			"windwp/nvim-autopairs",
 			"windwp/nvim-ts-autotag",
+			"David-Kunz/treesitter-unit",
 		},
 	},
 	{ "nvimdev/lspsaga.nvim", commit = "2dfb179" },

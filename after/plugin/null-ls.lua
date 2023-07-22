@@ -28,6 +28,7 @@ null_ls.setup({
 				"json",
 				"yaml",
 				"astro",
+				"prisma",
 			},
 		}),
 		null_ls.builtins.diagnostics.eslint_d.with({
