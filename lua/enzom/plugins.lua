@@ -1,6 +1,6 @@
 local plugins = {
 	{ "numToStr/Comment.nvim" },
-	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+	{ "ThePrimeagen/harpoon" },
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()

@@ -10,9 +10,6 @@ keymap.set("n", "-", "<C-x>")
 -- Delete a word backwards
 keymap.set("n", "dw", 'vb"_d')
 
--- Zen Mode
-keymap.set("n", "<leader>z", "<cmd>ZenMode<CR>")
-
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
@@ -28,12 +25,10 @@ keymap.set("n", "<C-s>", ":w<CR>")
 keymap.set("n", "<S-l>", "<Cmd>bnext<CR>")
 keymap.set("n", "<S-h>", "<Cmd>bprevious<CR>")
 
--- Save with root permission (not working for now)
---vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
-
 -- Split window
 keymap.set("n", "<Space>h", ":split<Return><C-w>w")
 keymap.set("n", "<Space>v", ":vsplit<Return><C-w>w")
+
 -- Move window
 keymap.set("", "<C-h>", "<C-w>h")
 keymap.set("", "<C-l>", "<C-w>l")
@@ -43,8 +38,6 @@ keymap.set("n", "<leader>h", "<Cmd>SmartResizeLeft<CR>")
 keymap.set("n", "<leader>l", "<Cmd>SmartResizeRight<CR>")
 keymap.set("n", "<leader>k", "<Cmd>SmartResizeUp<CR>")
 keymap.set("n", "<leader>j", "<Cmd>SmartResizeDown<CR>")
-
--- Treesitter units
 
 --- Treesitter-units
 keymap.set("x", "iu", ':lua require"treesitter-unit".select()<CR>')
@@ -69,11 +62,13 @@ keymap.set("n", "<leader>rs", ":%s/")
 --- Quit
 keymap.set("n", "<leader>q", ":q!<CR>")
 
---- Markdown table
-keymap.set("n", ";ta", "<cmd>TableModeRealign<CR><cmd>w<CR>")
-
---- ChatGPT
-keymap.set("n", "<space>g", "<cmd>ChatGPT<CR>")
-
 --- Git
 keymap.set("n", "<leader>ng", ":Neogit<CR>")
+
+-- Harpoon
+keymap.set("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>")
+keymap.set("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
+keymap.set("n", "<A-1>", ":lua require('harpoon.ui').nav_file(1)<CR>")
+keymap.set("n", "<A-2>", ":lua require('harpoon.ui').nav_file(2)<CR>")
+keymap.set("n", "<A-3>", ":lua require('harpoon.ui').nav_file(3)<CR>")
+keymap.set("n", "<A-4>", ":lua require('harpoon.ui').nav_file(4)<CR>")
