@@ -13,6 +13,7 @@ local plugins = {
 	{ "mrjones2014/smart-splits.nvim" },
 	{ "fedepujol/move.nvim" },
 	{ "ojroques/nvim-bufdel" },
+	{ "nvim-tree/nvim-web-devicons" },
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.2",
