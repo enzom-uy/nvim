@@ -9,7 +9,12 @@ keymap.set("i", "jk", "<Esc>")
 keymap.set("n", "<C-d>", ":BufDel<CR>")
 keymap.set("n", "<C-s>", ":w<CR>")
 
+keymap.set("n", "<C-j>", "<C-d>")
+keymap.set("n", "<C-k>", "<C-u>")
+
 keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
+
+keymap.set('n', "<Space>d", ":%bd|e#<CR>")
 
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
