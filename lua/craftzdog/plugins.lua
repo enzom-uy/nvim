@@ -11,12 +11,9 @@ packer.startup(function(use)
     use { "mrjones2014/smart-splits.nvim" }
     use { "ojroques/nvim-bufdel" }
     use { "ThePrimeagen/harpoon" }
-    use {
-        'svrana/neosolarized.nvim',
-        requires = { 'tjdevries/colorbuddy.nvim' }
-    }
-    use 'nvim-lualine/lualine.nvim' -- Statusline
-    use 'nvim-lua/plenary.nvim'     -- Common utilities
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use 'nvim-lualine/lualine.nvim'     -- Statusline
+    use 'nvim-lua/plenary.nvim'         -- Common utilities
     use 'andweeb/presence.nvim'
     use 'nvim-pack/nvim-spectre'
     use 'onsails/lspkind-nvim'            -- vscode-like pictograms
