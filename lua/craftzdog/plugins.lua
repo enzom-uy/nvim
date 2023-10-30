@@ -15,8 +15,9 @@ packer.startup(function(use)
         'svrana/neosolarized.nvim',
         requires = { 'tjdevries/colorbuddy.nvim' }
     }
-    use 'nvim-lualine/lualine.nvim'       -- Statusline
-    use 'nvim-lua/plenary.nvim'           -- Common utilities
+    use 'nvim-lualine/lualine.nvim' -- Statusline
+    use 'nvim-lua/plenary.nvim'     -- Common utilities
+    use 'andweeb/presence.nvim'
     use 'nvim-pack/nvim-spectre'
     use 'onsails/lspkind-nvim'            -- vscode-like pictograms
     use 'hrsh7th/cmp-buffer'              -- nvim-cmp source for buffer words
