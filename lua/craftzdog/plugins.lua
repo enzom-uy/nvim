@@ -19,6 +19,7 @@ local plugins = {
             require('null-ls').config()
         end
     },
+    { "nvim-neorg/neorg",                 build = ":Neorg sync-parsers", dependencies = { "nvim-lua/plenary.nvim" }, },
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
     {
