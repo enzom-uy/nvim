@@ -2,6 +2,7 @@ local status, ts = pcall(require, "nvim-treesitter.configs")
 require("treesitter-context").setup()
 if (not status) then return end
 
+
 ts.setup {
     highlight = {
         enable = true,
@@ -11,21 +12,21 @@ ts.setup {
         enable = true,
         disable = {},
     },
-    ensure_installed = {
-        "markdown",
-        "markdown_inline",
-        "tsx",
-        "typescript",
-        "toml",
-        "php",
-        "json",
-        "yaml",
-        "css",
-        "html",
-        "lua",
-        "norg",
-        "norg_meta"
-    },
+    -- ensure_installed = {
+    --     "markdown",
+    --     "markdown_inline",
+    --     "tsx",
+    --     "typescript",
+    --     "toml",
+    --     "php",
+    --     "json",
+    --     "yaml",
+    --     "css",
+    --     "html",
+    --     "lua",
+    --     "norg",
+    --     "norg_meta"
+    -- },
     autotag = {
         enable = true,
         enable_rename = true,

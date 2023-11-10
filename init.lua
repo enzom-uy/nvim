@@ -22,3 +22,5 @@ local is_wsl = has "wsl"
 if is_wsl == 1 then
     require('craftzdog.wsl')
 end
+
+vim.cmd.colorscheme "zenbones"

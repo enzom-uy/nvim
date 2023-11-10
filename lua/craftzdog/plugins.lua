@@ -3,7 +3,8 @@ local plugins = {
     { 'mrjones2014/smart-splits.nvim', lazy = true },
     { 'ojroques/nvim-bufdel',          dependencies = { 'jose-elias-alvarez/nvim-bufdel' } },
     { 'ThePrimeagen/harpoon',          name = 'harpoon' },
-    { 'catppuccin/nvim',               name = 'catppuccin' },
+    { 'kdheepak/monochrome.nvim' },
+    { "mcchrish/zenbones.nvim",        dependencies = { 'rktjmp/lush.nvim' } },
     { 'nvim-lualine/lualine.nvim',     build = function() require('lualine').setup() end },
     { 'nvim-lua/plenary.nvim' },
     { 'andweeb/presence.nvim' },
@@ -27,22 +28,17 @@ local plugins = {
         name = 'nvim-tree.lua'
     },
     { 'glepnir/lspsaga.nvim' },
+    { 'xiyaowong/transparent.nvim', lazy = false },
     { 'L3MON4D3/LuaSnip' },
     {
         'nvim-treesitter/nvim-treesitter',
-        build = function()
-            require('nvim-treesitter.configs').setup({
-                ensure_installed = 'maintained',
-                highlight = {
-                    enable = true,
-                },
-            })
-        end,
         dependencies = {
             'nvim-treesitter/nvim-treesitter-context',
             'David-Kunz/treesitter-unit',
             'windwp/nvim-ts-autotag',
         },
+        lazy = false,
+        priority = 1000
     },
     { 'kyazdani42/nvim-web-devicons' },
     { 'nvim-telescope/telescope.nvim' },

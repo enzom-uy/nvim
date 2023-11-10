@@ -43,7 +43,6 @@ vim.opt.wildignore:append { "*/node_modules/*" }
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cc = "100"
 vim.opt.lazyredraw = true
-vim.opt.foldmethod = "indent"
 
 -- Undercurl
 vim.cmd [[let &t_Cs = "\e[4:3m"]]
