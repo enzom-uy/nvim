@@ -15,5 +15,10 @@ require("neorg").setup {
                 },
             },
         },
+        ["core.export"] = {
+            config = {
+                extension = "md"
+            }
+        }
     },
 }

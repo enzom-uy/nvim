@@ -12,21 +12,23 @@ ts.setup {
         enable = true,
         disable = {},
     },
-    -- ensure_installed = {
-    --     "markdown",
-    --     "markdown_inline",
-    --     "tsx",
-    --     "typescript",
-    --     "toml",
-    --     "php",
-    --     "json",
-    --     "yaml",
-    --     "css",
-    --     "html",
-    --     "lua",
-    --     "norg",
-    --     "norg_meta"
-    -- },
+    ensure_installed = {
+        "markdown",
+        "markdown_inline",
+        "tsx",
+        "typescript",
+        "toml",
+        "php",
+        "json",
+        "yaml",
+        "css",
+        "html",
+        "lua",
+        "norg",
+        "norg_meta",
+        "astro"
+    },
+
     autotag = {
         enable = true,
         enable_rename = true,

@@ -13,7 +13,7 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.signcolumn = "yes"
 
-vim.opt.conceallevel = 2
+vim.opt.conceallevel = 0
 vim.opt.cursorline = true
 vim.opt.winblend = 0
 vim.opt.wildoptions = "pum"
