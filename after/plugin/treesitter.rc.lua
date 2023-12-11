@@ -32,11 +32,10 @@ ts.setup {
         enable_close = true,
         enable_close_on_slash = false
     },
-    context_commentstring = {
-        enable         = true,
-        enable_autocmd = false,
-    }
 }
+
+require('ts_context_commentstring').setup()
+vim.g.skip_ts_context_commentstring_module = true
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
