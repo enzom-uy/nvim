@@ -12,6 +12,7 @@ local plugins = {
     { 'hrsh7th/cmp-buffer' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
+    { '3rd/image.nvim' },
     { 'neovim/nvim-lspconfig' },
     {
         'jose-elias-alvarez/null-ls.nvim',
@@ -63,6 +64,20 @@ local plugins = {
     { 'lewis6991/gitsigns.nvim' },
     { 'kylechui/nvim-surround' },
     { 'tpope/vim-fugitive' },
+    {
+        "oflisback/obsidian-bridge.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim" },
+        config = function()
+            require("obsidian-bridge").setup({
+                scroll_sync = true
+            })
+        end,
+        event = {
+            "BufReadPre *.md",
+            "BufNewFile *.md",
+        },
+        lazy = true,
+    }
 }
 
 require("lazy").setup(plugins, opts)

@@ -94,6 +94,11 @@ nvim_lsp.prismals.setup {
     capabilities = capabilities
 }
 
+nvim_lsp.marksman.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
 nvim_lsp.lua_ls.setup {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
