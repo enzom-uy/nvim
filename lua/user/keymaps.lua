@@ -48,5 +48,3 @@ keymap({ "n", "x" }, "k", "gk", opts)
 keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
 vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)
-
-keymap("n", "<C-i>", "<C-i>", opts)
