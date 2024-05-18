@@ -5,11 +5,8 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	sources = {
 		formatting.markdownlint,
-		formatting.rustfmt.with({
-			extra_args = { "--edition=2021" },
-		}),
 		diagnostics.markdownlint,
-		formatting.prettier.with({
+		formatting.prettierd.with({
 			filetypes = {
 				"typescriptreact",
 				"astro",
@@ -22,7 +19,7 @@ null_ls.setup({
 			},
 		}),
 		formatting.stylua,
-		diagnostics.eslint_d,
+		require("none-ls.diagnostics.eslint_d"),
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)

@@ -21,8 +21,9 @@ local plugins = {
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "onsails/lspkind.nvim" },
 	{ "ThePrimeagen/harpoon", name = "harpoon" },
-	{ "nvimtools/none-ls.nvim" },
-	{ "epwalsh/obsidian.nvim", lazy = true, ft = "markdown", version = "*" },
+	{ "nvimtools/none-ls.nvim", dependencies = {
+        "nvimtools/none-ls-extras.nvim"
+    } },
 
 	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
 	{ "neovim/nvim-lspconfig" },
