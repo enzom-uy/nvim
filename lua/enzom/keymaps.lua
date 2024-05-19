@@ -60,8 +60,5 @@ keymap.set("n", "<A-2>", ":lua require('harpoon.ui').nav_file(2)<CR>")
 keymap.set("n", "<A-3>", ":lua require('harpoon.ui').nav_file(3)<CR>")
 keymap.set("n", "<A-4>", ":lua require('harpoon.ui').nav_file(4)<CR>")
 
--- Neorg
-keymap.set("n", "<leader>n", ":Neorg workspace notes<CR>")
-
 -- Zen Mode
 keymap.set("n", "<space>z", ":ZenMode<CR>")

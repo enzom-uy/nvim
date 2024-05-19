@@ -19,6 +19,7 @@ null_ls.setup({
 			},
 		}),
 		formatting.stylua,
+		formatting.markdownlint,
 		require("none-ls.diagnostics.eslint_d"),
 	},
 	-- configure format on save
