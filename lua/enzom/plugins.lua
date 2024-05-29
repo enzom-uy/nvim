@@ -16,6 +16,15 @@ local plugins = {
 		"folke/todo-comments.nvim",
 		opts = {},
 	},
+	{
+		"epwalsh/obsidian.nvim",
+		version = "*", -- recommended, use latest release instead of latest commit
+		lazy = true,
+		ft = "markdown",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 	{ "williamboman/mason.nvim" },
 	{ "nvimdev/lspsaga.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
