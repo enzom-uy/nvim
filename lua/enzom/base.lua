@@ -12,6 +12,7 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.signcolumn = "yes"
 
+vim.opt.guicursor = "i:block,i:blinkwait700-blinkoff200-blinkon200-Cursor"
 vim.opt.conceallevel = 2
 vim.opt.foldenable = false
 vim.opt.cursorline = true
