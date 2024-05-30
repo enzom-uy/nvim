@@ -11,13 +11,13 @@ require("neo-tree").setup({
 	open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
 	sort_case_insensitive = false, -- used when sorting files and directories in the tree
 	sort_function = nil, -- use a custom function for sorting files and directories in the tree
-    event_handlers = {
-        event = "neo_tree_popup_input_ready",
-        handler = function(args)
-                    vim.cmd("stopinsert")
-                    vim.keymap.set("i", "<esc>", vim.cmd.stopinsert, { noremap = true, buffer = args.bufnr })
-                end
-    },
+	event_handlers = {
+		event = "neo_tree_popup_input_ready",
+		handler = function(args)
+			vim.cmd("stopinsert")
+			vim.keymap.set("i", "<esc>", vim.cmd.stopinsert, { noremap = true, buffer = args.bufnr })
+		end,
+	},
 	default_component_configs = {
 		container = {
 			enable_character_fade = true,
@@ -179,7 +179,7 @@ require("neo-tree").setup({
 			},
 		},
 		follow_current_file = {
-			enabled = false, -- This will find and focus the file in the active buffer every time
+			enabled = true, -- This will find and focus the file in the active buffer every time
 			--               -- the current file is changed while the tree is open.
 			leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
 		},

@@ -75,6 +75,11 @@ local function formatForTailwindCSS(entry, vim_item)
 end
 
 cmp.setup({
+	window = {
+		documentation = {
+			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+		},
+	},
 	sources = {
 		-- { name = "path" },
 		{ name = "nvim_lsp" },

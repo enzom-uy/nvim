@@ -1,12 +1,7 @@
 local plugins = {
 
 	-- Folke's good stuff
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{ "folke/trouble.nvim" },
 	{ "folke/zen-mode.nvim" },
 	-- End of Folke's good stuff
