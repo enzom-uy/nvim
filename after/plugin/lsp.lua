@@ -82,7 +82,6 @@ cmp.setup({
 	},
 	sources = {
 		-- { name = "path" },
-		{ name = "supermaven" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 	},
