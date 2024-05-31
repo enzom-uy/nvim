@@ -88,6 +88,7 @@ local plugins = {
 	},
 	{ "norcalli/nvim-colorizer.lua" },
 	{ "windwp/nvim-autopairs" },
+	{ "OlegGulevskyy/better-ts-errors.nvim" },
 }
 
 require("lazy").setup(plugins, opts)
