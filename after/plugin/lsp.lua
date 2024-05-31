@@ -82,6 +82,7 @@ cmp.setup({
 	},
 	sources = {
 		-- { name = "path" },
+		{ name = "supermaven" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 	},
@@ -93,6 +94,9 @@ cmp.setup({
 				vim_item = formatForTailwindCSS(entry, vim_item)
 				return vim_item
 			end,
+			symbol_map = {
+				Supermaven = "",
+			},
 		}),
 	},
 	mapping = cmp.mapping.preset.insert({

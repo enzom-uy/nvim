@@ -33,6 +33,7 @@
   "obsidian.nvim": { "branch": "main", "commit": "db41b1f20459293436fab510bec58c82a73bd1f7" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "smart-splits.nvim": { "branch": "master", "commit": "d5edff056a90f98df2648d34e239ee4abb49902f" },
+  "supermaven-nvim": { "branch": "main", "commit": "5283a6c57fb69ceff7505b1a2267714bda0dafa0" },
   "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "todo-comments.nvim": { "branch": "main", "commit": "e1549807066947818113a7d7ed48f637e49620d3" },
   "treesitter-unit": { "branch": "main", "commit": "89968a1f8c72427691088e6d09d26a52c2ddc6f4" },
