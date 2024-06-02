@@ -92,6 +92,16 @@ local plugins = {
 	{
 		"supermaven-inc/supermaven-nvim",
 	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+	{
+		"stevearc/dressing.nvim",
+		opts = {},
+	},
+	{ "johann2357/nvim-smartbufs" },
 }
 
 require("lazy").setup(plugins, opts)

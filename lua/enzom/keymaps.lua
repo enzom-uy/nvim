@@ -6,7 +6,11 @@ keymap.set("n", "x", '"_x')
 keymap.set("n", "<leader>q", ":q<CR>")
 
 keymap.set("i", "jk", "<Esc>")
-keymap.set("n", "<C-d>", ":BufDel<CR>")
+
+keymap.set("n", "<leader>d", ":lua require('nvim-smartbufs').close_current_buffer()<CR>")
+keymap.set("n", "<S-h>", ":lua require('nvim-smartbufs').goto_prev_buffer()<CR>")
+keymap.set("n", "<S-l>", ":lua require('nvim-smartbufs').goto_next_buffer()<CR>")
+
 keymap.set("n", "<C-s>", ":w<CR>")
 
 keymap.set("n", "<C-j>", "<C-d>")
