@@ -4,7 +4,7 @@ require("supermaven-nvim").setup({
 		clear_suggestion = "<C-]>",
 		accept_word = "<C-j>",
 	},
-	ignore_filetypes = { "neo-tree", "telescope" },
+	ignore_filetypes = { "neo-tree", "telescope", "markdown" },
 	color = {
 		-- suggestion_color = "#ffffff",
 		-- cterm = 244,
