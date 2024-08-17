@@ -2,27 +2,6 @@ local lsp_zero = require("lsp-zero")
 local lspkind = require("lspkind")
 local saga = require("lspsaga")
 
--- code action
-vim.keymap.set("n", ";af", "<cmd>Lspsaga code_action<CR>")
-
-local lsp_attach = function(client, bufnr)
-	local opts = { buffer = bufnr, noremap = true, silent = true }
-
-	vim.keymap.set("n", "<S-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-	vim.keymap.set("n", "md", "<Cmd>Lspsaga show_line_diagnostics<CR>", opts)
-	vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
-	vim.keymap.set("n", "gd", "<Cmd>Lspsaga goto_definition<CR>", opts)
-	vim.keymap.set("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>", opts)
-	vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
-	vim.keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
-end
-
-lsp_zero.extend_lspconfig({
-	sign_text = true,
-	lsp_attach = lsp_attach,
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
-})
-
 saga.setup({
 	ui = {
 		border = "rounded",
@@ -36,6 +15,25 @@ saga.setup({
 	outline = {
 		layout = "float",
 	},
+})
+
+local lsp_attach = function(client, bufnr)
+	local opts = { buffer = bufnr, noremap = true, silent = true }
+
+	vim.keymap.set("n", ";af", "<cmd>Lspsaga code_action<CR>", opts)
+	vim.keymap.set("n", "<S-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+	vim.keymap.set("n", "md", "<Cmd>Lspsaga show_line_diagnostics<CR>", opts)
+	vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
+	vim.keymap.set("n", "gd", "<Cmd>Lspsaga goto_definition<CR>", opts)
+	vim.keymap.set("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>", opts)
+	vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
+	vim.keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
+end
+
+lsp_zero.extend_lspconfig({
+	sign_text = true,
+	lsp_attach = lsp_attach,
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
 
 require("mason").setup({})
@@ -55,10 +53,6 @@ require("mason-lspconfig").setup({
 		function(server_name)
 			require("lspconfig")[server_name].setup({})
 		end,
-		lua_ls = function()
-			local lua_opts = lsp_zero.nvim_lua_ls()
-			require("lspconfig").lua_ls.setup(lua_opts)
-		end,
 	},
 })
 
@@ -74,22 +68,6 @@ cmp.setup({
 	sources = {
 		{
 			name = "nvim_lsp",
-			entry_filter = function(entry, ctx)
-				local kind = require("cmp.types.lsp").CompletionItemKind[entry:get_kind()]
-				if kind == "Snippet" and ctx.prev_context.filetype == "java" then
-					return false
-				end
-
-				if ctx.prev_context.filetype == "markdown" then
-					return true
-				end
-
-				if kind == "Text" then
-					return false
-				end
-
-				return true
-			end,
 		},
 		{ name = "nvim_lua" },
 	},
