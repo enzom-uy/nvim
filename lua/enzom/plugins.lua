@@ -11,15 +11,6 @@ local plugins = {
 		"folke/todo-comments.nvim",
 		opts = {},
 	},
-	{
-		"epwalsh/obsidian.nvim",
-		version = "*", -- recommended, use latest release instead of latest commit
-		lazy = true,
-		ft = "markdown",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
 	{ "williamboman/mason.nvim" },
 	{ "nvimdev/lspsaga.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
@@ -29,7 +20,7 @@ local plugins = {
 		"nvimtools/none-ls-extras.nvim",
 	} },
 
-	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
+	{ "VonHeikemen/lsp-zero.nvim", branch = "v4.x" },
 	{ "neovim/nvim-lspconfig" },
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/cmp-path" },

@@ -15,6 +15,7 @@ null_ls.setup({
 				"typescript",
 				"prisma",
 				"jsonc",
+				"css",
 			},
 		}),
 		formatting.stylua,
