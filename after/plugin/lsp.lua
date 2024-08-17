@@ -72,7 +72,25 @@ cmp.setup({
 		},
 	},
 	sources = {
-		{ name = "nvim_lsp" },
+		{
+			name = "nvim_lsp",
+			entry_filter = function(entry, ctx)
+				local kind = require("cmp.types.lsp").CompletionItemKind[entry:get_kind()]
+				if kind == "Snippet" and ctx.prev_context.filetype == "java" then
+					return false
+				end
+
+				if ctx.prev_context.filetype == "markdown" then
+					return true
+				end
+
+				if kind == "Text" then
+					return false
+				end
+
+				return true
+			end,
+		},
 		{ name = "nvim_lua" },
 	},
 	snippet = {
