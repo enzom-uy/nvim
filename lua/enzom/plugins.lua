@@ -3,6 +3,22 @@ local plugins = {
 	-- Folke's good stuff
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{ "folke/trouble.nvim" },
+
+	{ "williamboman/mason.nvim" },
+	{ "williamboman/mason-lspconfig.nvim" },
+	{ "neovim/nvim-lspconfig" },
+
+	{ "hrsh7th/nvim-cmp" },
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-path" },
+	{ "hrsh7th/nvim-cmp" },
+	{ "L3MON4D3/LuaSnip" },
+
+	{
+		"pmizio/typescript-tools.nvim",
+		opts = {},
+	},
+
 	{ "folke/zen-mode.nvim" },
 	-- End of Folke's good stuff
 
@@ -11,21 +27,13 @@ local plugins = {
 		"folke/todo-comments.nvim",
 		opts = {},
 	},
-	{ "williamboman/mason.nvim" },
 	{ "nvimdev/lspsaga.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
 	{ "onsails/lspkind.nvim" },
 	{ "ThePrimeagen/harpoon", name = "harpoon" },
 	{ "nvimtools/none-ls.nvim", dependencies = {
 		"nvimtools/none-ls-extras.nvim",
 	} },
 
-	{ "VonHeikemen/lsp-zero.nvim", branch = "v4.x" },
-	{ "neovim/nvim-lspconfig" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/cmp-path" },
-	{ "hrsh7th/nvim-cmp" },
-	{ "L3MON4D3/LuaSnip" },
 	{ "mrjones2014/smart-splits.nvim", lazy = true },
 	{ "kylechui/nvim-surround" },
 	{
