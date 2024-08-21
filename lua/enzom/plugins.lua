@@ -106,6 +106,12 @@ local plugins = {
 		opts = {},
 	},
 	{ "johann2357/nvim-smartbufs" },
+	{
+		"epwalsh/obsidian.nvim",
+		version = "*", -- recommended, use latest release instead of latest commit
+		lazy = true,
+		ft = "markdown",
+	},
 }
 
 require("lazy").setup(plugins, opts)

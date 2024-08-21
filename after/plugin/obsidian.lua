@@ -1,8 +1,8 @@
 require("obsidian").setup({
 	workspaces = {
 		{
-			name = "obsidian",
-			path = "/mnt/c/Users/enzom/obsidian/",
+			name = "Enzo",
+			path = "/home/enzom/obsidian/",
 		},
 	},
 
