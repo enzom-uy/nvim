@@ -5,7 +5,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	sources = {
 		formatting.markdownlint,
-		formatting.prettierd.with({
+        formatting.prettierd.with({
 			filetypes = {
 				"typescriptreact",
 				"astro",
