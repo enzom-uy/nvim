@@ -66,3 +66,12 @@ keymap.set("n", "<A-4>", ":lua require('harpoon.ui').nav_file(4)<CR>")
 
 -- Zen Mode
 keymap.set("n", "<space>z", ":ZenMode<CR>")
+
+-- Obsidian
+keymap.set("n", "<leader>oc", ":lua require('obsidian').util.toggle_checkbox()<CR>")
+keymap.set("n", "<leader>ot", "<Cmd>ObsidianTemplate<CR>")
+keymap.set("n", "<leader>oo", "<Cmd>ObsidianOpen<CR>")
+keymap.set("n", "<leader>ob", "<Cmd>ObsidianBacklinks<CR>")
+keymap.set("n", "<leader>on", "<Cmd>ObsidianNew<CR>")
+keymap.set("n", "<leader>os", "<Cmd>ObsidianSearch<CR>")
+keymap.set("n", "<leader>oq", "<Cmd>ObsidianQuickSwitch<CR>")
