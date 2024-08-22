@@ -62,6 +62,17 @@ local plugins = {
 		},
 	},
 	{
+		"stevearc/oil.nvim",
+		opts = {},
+		-- Optional dependencies
+		dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+	},
+
+	{
+		"antosha417/nvim-lsp-file-operations",
+	},
+
+	{
 		"nvim-treesitter/nvim-treesitter",
 		defaults = {
 			lazy = false,
