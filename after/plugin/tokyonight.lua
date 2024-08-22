@@ -32,4 +32,4 @@ require("tokyonight").setup({
 	cache = true, -- When set to true, the theme will be cached for better performance
 })
 
-vim.cmd.colorscheme("tokyonight-moon")
+vim.cmd.colorscheme("catppuccin-mocha")

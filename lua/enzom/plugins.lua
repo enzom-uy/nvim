@@ -112,6 +112,11 @@ local plugins = {
 		lazy = true,
 		ft = "markdown",
 	},
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = true,
+		ft = "markdown",
+	},
 }
 
 require("lazy").setup(plugins, opts)
