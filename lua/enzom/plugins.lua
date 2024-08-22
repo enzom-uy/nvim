@@ -112,10 +112,11 @@ local plugins = {
 		lazy = true,
 		ft = "markdown",
 	},
+
 	{
-		"OXY2DEV/markview.nvim",
-		lazy = true,
-		ft = "markdown",
+		"vyfor/cord.nvim",
+		build = "./build || .\\build",
+		event = "VeryLazy",
 	},
 }
 
