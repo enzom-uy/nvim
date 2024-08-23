@@ -16,7 +16,7 @@ keymap.set("n", "<C-s>", ":w<CR>")
 keymap.set("n", "<C-j>", "<C-d>")
 keymap.set("n", "<C-k>", "<C-u>")
 
--- keymap.set("n", "<C-n>", ":Neotree toggle<CR>")
+keymap.set("n", "<leader>n", ":Neotree toggle<CR>")
 keymap.set("n", "<C-n>", ":lua require('oil').toggle_float()<CR>")
 
 keymap.set("n", "<Space>d", ":%bd|e#<CR>")
