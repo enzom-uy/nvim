@@ -8,10 +8,10 @@ local plugins = {
 		priority = 1000,
 		opts = {},
 	},
-	{ "folke/trouble.nvim" },
+	{ "folke/trouble.nvim", lazy = true },
 
-	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
+	{ "williamboman/mason.nvim", lazy = true },
+	{ "williamboman/mason-lspconfig.nvim", lazy = true },
 	{ "neovim/nvim-lspconfig" },
 
 	{ "hrsh7th/nvim-cmp" },
@@ -54,22 +54,16 @@ local plugins = {
 		tag = "0.1.5",
 	},
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
 	},
-	{
-		"stevearc/oil.nvim",
-		opts = {},
-		-- Optional dependencies
-		dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-	},
-
 	{
 		"antosha417/nvim-lsp-file-operations",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-tree.lua",
+		},
+		after = "nvim-tree",
 	},
 
 	{
@@ -112,6 +106,7 @@ local plugins = {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	{
 		"stevearc/dressing.nvim",
 		opts = {},
@@ -123,12 +118,7 @@ local plugins = {
 		lazy = true,
 		ft = "markdown",
 	},
-
-	{
-		"vyfor/cord.nvim",
-		build = "./build || .\\build",
-		event = "VeryLazy",
-	},
+	{ "MunifTanjim/nui.nvim" },
 }
 
 require("lazy").setup(plugins, opts)
