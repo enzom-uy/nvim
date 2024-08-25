@@ -2,12 +2,6 @@ local plugins = {
 
 	-- Folke's good stuff
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
 	{ "folke/trouble.nvim", lazy = true },
 
 	{ "williamboman/mason.nvim", lazy = true },
@@ -23,39 +17,40 @@ local plugins = {
 	{
 		"pmizio/typescript-tools.nvim",
 		opts = {},
+		lazy = true,
 	},
 
-	{ "folke/zen-mode.nvim" },
+	{ "folke/zen-mode.nvim", lazy = true },
+	{ "folke/noice.nvim", event = "VimEnter" },
 	-- End of Folke's good stuff
 
 	{ "nvim-lua/plenary.nvim" },
 	{
 		"folke/todo-comments.nvim",
 		opts = {},
+		lazy = true,
 	},
-	{ "nvimdev/lspsaga.nvim" },
-	{ "onsails/lspkind.nvim" },
-	{ "ThePrimeagen/harpoon", name = "harpoon" },
+	{ "nvimdev/lspsaga.nvim", lazy = true },
+	{ "onsails/lspkind.nvim", lazy = true },
+	{ "ThePrimeagen/harpoon", name = "harpoon", lazy = true },
 	{ "nvimtools/none-ls.nvim", dependencies = {
 		"nvimtools/none-ls-extras.nvim",
 	} },
 
 	{ "mrjones2014/smart-splits.nvim", lazy = true },
-	{ "kylechui/nvim-surround" },
-	{
-		"iamcco/markdown-preview.nvim",
-		ft = "markdown",
-		-- build = "cd app && yarn install",
-		build = ":call mkdp#util#install()",
-	},
-	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+	{ "kylechui/nvim-surround", lazy = true },
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.5",
+		tag = "0.1.8",
+		lazy = true,
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
 		version = "*",
+		lazy = true,
+		keys = {
+			{ "<C-n>", "<cmd>NvimTreeToggle<cr>" },
+		},
 	},
 	{
 		"antosha417/nvim-lsp-file-operations",
@@ -88,6 +83,7 @@ local plugins = {
 	{
 		"numToStr/Comment.nvim",
 		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
+		lazy = true,
 	},
 	{
 		"NeogitOrg/neogit",
@@ -95,21 +91,22 @@ local plugins = {
 			"sindrets/diffview.nvim", -- optional - Diff integration
 		},
 		config = true,
+		lazy = true,
 	},
 	{ "norcalli/nvim-colorizer.lua" },
 	{ "windwp/nvim-autopairs" },
 	{ "OlegGulevskyy/better-ts-errors.nvim" },
 	{
 		"supermaven-inc/supermaven-nvim",
+		lazy = true,
 	},
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons", after = "catppuccin" },
 	{
 		"stevearc/dressing.nvim",
-		opts = {},
 	},
 	{ "johann2357/nvim-smartbufs" },
 	{
@@ -119,6 +116,7 @@ local plugins = {
 		ft = "markdown",
 	},
 	{ "MunifTanjim/nui.nvim" },
+	{ "goolord/alpha-nvim", event = "VimEnter" },
 }
 
 require("lazy").setup(plugins, opts)

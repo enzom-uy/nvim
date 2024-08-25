@@ -60,6 +60,7 @@ local lsp_attach = function(client, bufnr)
 	vim.keymap.set("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>", opts)
 	vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
 	vim.keymap.set("n", "<leader>gr", "<Cmd>Lspsaga rename<CR>", opts)
+	vim.keymap.set("n", "<leader>af", ":Lspsaga code_action<CR>")
 end
 
 for _, server in ipairs(servers) do
@@ -72,11 +73,11 @@ end
 local saga = require("lspsaga")
 
 -- code action
-vim.keymap.set("n", ";af", "<cmd>Lspsaga code_action<CR>")
 
 saga.setup({
 	ui = {
 		border = "rounded",
+		height = 30,
 	},
 	symbol_in_winbar = {
 		enable = false,
