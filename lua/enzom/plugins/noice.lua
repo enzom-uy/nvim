@@ -1,8 +1,17 @@
 return {
 	"folke/noice.nvim",
 	event = "VimEnter",
+	dependencies = {
+		"rcarriga/nvim-notify",
+	},
 	config = function()
 		require("noice").setup({
+			routes = {
+				{
+					view = "notify",
+					filter = { event = "msg_showmode" },
+				},
+			},
 			opts = {
 				lsp = {
 					override = {
@@ -77,18 +86,10 @@ return {
 					replace = true,
 					merge = true,
 				},
-				routes = {
-					{
-						filter = {
-							event = "notify",
-							find = "No information available",
-						},
-						opts = { skip = true },
-					},
-				},
 				messages = {
 					enabled = false,
 				},
+
 				views = {
 					cmdline_popup = {
 						position = {

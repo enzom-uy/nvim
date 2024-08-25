@@ -6,10 +6,22 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
 		"L3MON4D3/LuaSnip",
+		"nvimdev/lspsaga.nvim",
 	},
 	config = function()
 		local lspkind = require("lspkind")
 		local cmp = require("cmp")
+		local servers = {
+			-- "tsserver",
+			"lua_ls",
+			"html",
+			"cssls",
+			"bashls",
+			"jsonls",
+			"marksman",
+			"tailwindcss",
+			"prismals",
+		}
 
 		cmp.setup({
 			window = {
@@ -19,7 +31,6 @@ return {
 			},
 
 			mapping = cmp.mapping.preset.insert({
-				["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
 				["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
 				["<Enter>"] = cmp.mapping.confirm({ select = true }),
 				["<C-l>"] = cmp.mapping.complete(),
