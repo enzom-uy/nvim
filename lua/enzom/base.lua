@@ -11,6 +11,7 @@ vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.signcolumn = "yes"
+vim.opt.showmode = false
 -- vim.opt.guicursor =
 -- 	"i:block,i:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 vim.opt.foldenable = false
