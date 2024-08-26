@@ -1,6 +1,6 @@
 return {
 	"hrsh7th/nvim-cmp",
-	event = "InsertEnter",
+	event = "BufEnter",
 	dependencies = {
 		"onsails/lspkind.nvim",
 		"hrsh7th/cmp-nvim-lsp",
@@ -32,6 +32,7 @@ return {
 
 			mapping = cmp.mapping.preset.insert({
 				["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
+				["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
 				["<Enter>"] = cmp.mapping.confirm({ select = true }),
 				["<C-l>"] = cmp.mapping.complete(),
 				["<C-space>"] = cmp.mapping.complete(),
@@ -63,7 +64,7 @@ return {
 			vim.keymap.set("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>", opts)
 			vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
 			vim.keymap.set("n", "<leader>gr", "<Cmd>Lspsaga rename<CR>", opts)
-			vim.keymap.set("n", "<leader>af", ":Lspsaga code_action<CR>")
+			vim.keymap.set("n", "<leader>af", ":lua vim.lsp.buf.code_action()<CR>")
 		end
 
 		for _, server in ipairs(servers) do

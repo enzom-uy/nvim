@@ -1,6 +1,6 @@
 return {
 	"folke/zen-mode.nvim",
-	lazy = true,
+	cmd = { "ZenMode" },
 	config = function()
 		require("zen-mode").setup({
 			window = {
