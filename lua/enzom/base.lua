@@ -43,7 +43,7 @@ vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cc = "100"
-vim.opt.lazyredraw = false
+vim.opt.lazyredraw = true
 vim.opt.foldmethod = "indent"
 
 -- Undercurl

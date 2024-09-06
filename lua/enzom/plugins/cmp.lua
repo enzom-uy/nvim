@@ -31,8 +31,8 @@ return {
 			},
 
 			mapping = cmp.mapping.preset.insert({
-				["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
-				["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
+				["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+				["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 				["<Enter>"] = cmp.mapping.confirm({ select = true }),
 				["<C-l>"] = cmp.mapping.complete(),
 				["<C-space>"] = cmp.mapping.complete(),

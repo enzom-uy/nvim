@@ -13,8 +13,8 @@ keymap.set("n", "<S-l>", ":lua require('nvim-smartbufs').goto_next_buffer()<CR>"
 
 keymap.set("n", "<C-s>", ":w<CR>", opts)
 
-keymap.set("n", "<C-j>", "<C-d>", opts)
-keymap.set("n", "<C-k>", "<C-u>", opts)
+-- keymap.set("n", "<C-j>", "<C-d>", opts)
+-- keymap.set("n", "<C-k>", "<C-u>", opts)
 
 keymap.set("n", "<Space>d", ":%bd|e#<CR>", opts)
 

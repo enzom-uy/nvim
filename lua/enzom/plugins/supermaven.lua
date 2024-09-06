@@ -1,5 +1,6 @@
 return {
 	"supermaven-inc/supermaven-nvim",
+	enabled = true,
 	lazy = true,
 	event = "InsertEnter",
 	config = function()
@@ -9,7 +10,7 @@ return {
 				clear_suggestion = "<C-]>",
 				accept_word = "<C-j>",
 			},
-			ignore_filetypes = { "NvimTree", "telescope", "markdown" },
+			ignore_filetypes = { "NvimTree", "TelescopePrompt", "markdown" },
 			disable_inline_completion = false, -- disables inline completion for use with cmp
 			disable_keymaps = false, -- disables built in keymaps for more manual control
 			log_level = "warn",

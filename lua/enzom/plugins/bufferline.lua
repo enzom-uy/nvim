@@ -13,20 +13,6 @@ return {
 				style_preset = bufferline.style_preset.default,
 				separator_style = "thick",
 			},
-			highlights = require("catppuccin.groups.integrations.bufferline").get({
-				styles = { "italic", "bold" },
-				custom = {
-					all = {
-						fill = { bg = "NONE" },
-					},
-					mocha = {
-						background = { fg = mocha.text },
-					},
-					latte = {
-						background = { fg = "#000000" },
-					},
-				},
-			}),
 		})
 	end,
 }
