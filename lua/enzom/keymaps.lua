@@ -65,4 +65,4 @@ keymap.set("n", "<A-4>", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)
 -- Zen Mode
 keymap.set("n", "<space>z", ":ZenMode<CR>", opts)
 
-keymap.set("n", "<leader>t", ":Lspsaga term_toggle<CR>", opts)
+keymap.set("n", "<leader>te", ":Lspsaga term_toggle<CR>", opts)

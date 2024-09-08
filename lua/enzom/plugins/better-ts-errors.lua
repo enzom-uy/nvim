@@ -1,12 +1,10 @@
 return {
 	"OlegGulevskyy/better-ts-errors.nvim",
-	lazy = true,
-	config = function()
-		require("better-ts-errors").setup({
-			keymaps = {
-				toggle = "<leader>dd", -- Toggling keymap
-				go_to_definition = "<leader>dx", -- Go to problematic type from popup window
-			},
-		})
-	end,
+	dependencies = { "MunifTanjim/nui.nvim" },
+	config = {
+		keymaps = {
+			toggle = "<leader>ts", -- default '<leader>dd'
+			go_to_definition = "<leader>p", -- default '<leader>dx'
+		},
+	},
 }
