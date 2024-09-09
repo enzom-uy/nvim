@@ -66,3 +66,6 @@ keymap.set("n", "<A-4>", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)
 keymap.set("n", "<space>z", ":ZenMode<CR>", opts)
 
 keymap.set("n", "<leader>te", ":Lspsaga term_toggle<CR>", opts)
+
+-- Telescope todos
+keymap.set("n", "<leader>to", ":TodoTelescope<CR>", opts)

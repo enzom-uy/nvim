@@ -1,5 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
+	dependencies = { "nvim-lua/plenary.nvim" },
 	tag = "0.1.8",
 	config = function()
 		local status, telescope = pcall(require, "telescope")
@@ -8,19 +9,30 @@ return {
 		end
 		local actions = require("telescope.actions")
 		local builtin = require("telescope.builtin")
+		local open_with_trouble = require("trouble.sources.telescope").open
 
 		telescope.setup({
-			defaults = {
+			extensions = {
+				fzf = {
+					fuzzy = true,
+					override_generic_sorter = true,
+					override_file_sorter = true,
+					case_mode = "ignore_case",
+				},
+			},
 
+			defaults = {
 				file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 				qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+
 				mappings = {
 					n = {
 						["q"] = actions.close,
 					},
 					i = {
 						["<C-n>"] = actions.move_selection_next,
+						["<C-t>"] = open_with_trouble,
 						["<C-p>"] = actions.move_selection_previous,
 					},
 				},
@@ -40,6 +52,8 @@ return {
 				},
 			},
 		})
+
+		require("telescope").load_extension("fzf")
 
 		vim.keymap.set("n", ";sf", function()
 			builtin.find_files({
