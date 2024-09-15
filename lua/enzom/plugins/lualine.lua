@@ -10,11 +10,6 @@ return {
 			},
 			sections = {
 				lualine_x = {},
-				lualine_a = {
-					{
-						"buffers",
-					},
-				},
 			},
 		})
 	end,
