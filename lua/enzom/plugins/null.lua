@@ -29,7 +29,7 @@ return {
 				}),
 				formatting.stylua,
 				formatting.markdownlint,
-				require("none-ls.diagnostics.eslint_d"),
+				-- require("none-ls.diagnostics.eslint_d"),
 			},
 			-- configure format on save
 			on_attach = function(current_client, bufnr)

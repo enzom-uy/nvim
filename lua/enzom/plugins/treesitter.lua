@@ -38,7 +38,7 @@ return {
 				disable = {},
 			},
 			indent = {
-				enable = true,
+				enable = false,
 				disable = {},
 			},
 			ensure_installed = {
