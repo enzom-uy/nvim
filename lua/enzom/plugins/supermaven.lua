@@ -1,19 +1,14 @@
 return {
 	"supermaven-inc/supermaven-nvim",
-	enabled = true,
-	lazy = true,
 	event = "InsertEnter",
-	config = function()
-		require("supermaven-nvim").setup({
-			keymaps = {
-				accept_suggestion = "<Tab>",
-				clear_suggestion = "<C-]>",
-				accept_word = "<C-j>",
-			},
-			ignore_filetypes = { "NvimTree", "TelescopePrompt", "markdown" },
-			disable_inline_completion = false, -- disables inline completion for use with cmp
-			disable_keymaps = false, -- disables built in keymaps for more manual control
-			log_level = "warn",
-		})
-	end,
+	cmd = {
+		"SupermavenUseFree",
+	},
+	opts = {
+		keymaps = {
+			accept_suggestion = nil, -- handled by nvim-cmp / blink.cmp
+		},
+		disable_inline_completion = vim.g.ai_cmp,
+		ignore_filetypes = { "bigfile", "snacks_input", "snacks_notif" },
+	},
 }

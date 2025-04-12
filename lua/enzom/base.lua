@@ -11,6 +11,7 @@ vim.wo.relativenumber = true
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
+vim.opt.expandtab = true
 vim.opt.signcolumn = "yes"
 vim.opt.showmode = false
 -- vim.opt.guicursor =
@@ -26,7 +27,6 @@ vim.opt.backup = false
 vim.opt.showcmd = true
 vim.opt.cmdheight = 1
 vim.opt.laststatus = 3
-vim.opt.expandtab = true
 vim.opt.scrolloff = 10
 vim.opt.shell = "zsh"
 vim.opt.backupskip = { "/tmp/*", "/private/tmp/*" }
@@ -66,11 +66,3 @@ vim.opt.winblend = 0
 vim.opt.wildoptions = "pum"
 vim.opt.pumblend = 5
 vim.opt.background = "dark"
-
--- highlight yanked text for 200ms using the "Visual" highlight group
-vim.cmd([[
-  augroup highlight_yank
-  autocmd!
-  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=100})
-  augroup END
-]])

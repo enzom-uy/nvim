@@ -21,6 +21,7 @@ return {
 			"marksman",
 			"tailwindcss",
 			"prismals",
+			"jdtls",
 		}
 
 		cmp.setup({
@@ -58,7 +59,7 @@ return {
 			local opts = { buffer = bufnr, noremap = true, silent = true }
 
 			vim.keymap.set("n", "<S-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-			vim.keymap.set("n", "md", "<Cmd>Lspsaga show_line_diagnostics<CR>", opts)
+			vim.keymap.set("n", "md", ":lua vim.diagnostic.open_float()<CR>", opts)
 			vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
 			vim.keymap.set("n", "gd", "<Cmd>Lspsaga goto_definition<CR>", opts)
 			vim.keymap.set("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>", opts)

@@ -16,6 +16,7 @@ return {
 			"marksman",
 			"tailwindcss",
 			"prismals",
+			"jdtls",
 		}
 
 		require("mason-lspconfig").setup({

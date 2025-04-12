@@ -31,8 +31,8 @@ keymap.set("n", "<C-a>", "gg<S-v>G", opts)
 -- New tab
 keymap.set("n", "te", ":tabedit", opts)
 -- Split window
-keymap.set("n", "ss", ":split<Return><C-w>w", opts)
-keymap.set("n", "sv", ":vsplit<Return><C-w>w", opts)
+keymap.set("n", "<leader>ss", ":split<Return><C-w>w", opts)
+keymap.set("n", "<leader>sv", ":vsplit<Return><C-w>w", opts)
 -- Move window
 keymap.set("n", "<Space>", "<C-w>w", opts)
 keymap.set("", "sh", "<C-w>h", opts)

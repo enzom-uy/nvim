@@ -66,6 +66,7 @@ return {
 				illuminate = true,
 				indent_blankline = { enabled = true, colored_indent_levels = false },
 				leap = false,
+				blink_cmp = true,
 				lightspeed = false,
 				lsp_saga = true,
 				lsp_trouble = true,
