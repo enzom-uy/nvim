@@ -25,6 +25,7 @@ return {
 				file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 				qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+				file_sorter = require("telescope.sorters").get_fuzzy_file,
 
 				mappings = {
 					n = {
@@ -57,7 +58,7 @@ return {
 
 		vim.keymap.set("n", ";sf", function()
 			builtin.find_files({
-				no_ignore = false,
+				no_ignore = true,
 				hidden = true,
 			})
 		end)

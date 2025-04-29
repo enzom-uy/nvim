@@ -11,6 +11,12 @@ return {
 	config = function()
 		local lspkind = require("lspkind")
 		local cmp = require("cmp")
+
+		local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+		if buftype == "prompt" then
+			return false
+		end
+
 		local servers = {
 			-- "tsserver",
 			"lua_ls",
