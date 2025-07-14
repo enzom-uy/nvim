@@ -28,6 +28,8 @@ return {
 			"tailwindcss",
 			"prismals",
 			"jdtls",
+			"ts_ls",
+			"eslint",
 		}
 
 		cmp.setup({

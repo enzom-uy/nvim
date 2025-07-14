@@ -1,6 +1,7 @@
 return {
 	"vyfor/cord.nvim",
 	build = ":Cord update",
+	enabled = false,
 	opts = {
 		log_level = vim.log.levels.TRACE,
 		-- pipe_path = "/tmp/discord-ipc-0",

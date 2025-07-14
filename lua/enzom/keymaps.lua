@@ -2,6 +2,9 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 keymap.set("n", "x", '"_x', opts)
+keymap.set("x", "p", function()
+	return 'pgv"' .. vim.v.register .. "y"
+end, { remap = false, expr = true }, opts)
 
 keymap.set("n", "<leader>q", ":q<CR>", opts)
 
