@@ -21,14 +21,12 @@ return {
 			-- "tsserver",
 			"lua_ls",
 			"html",
-			"cssls",
 			"bashls",
 			"jsonls",
 			"marksman",
 			"tailwindcss",
 			"prismals",
-			"jdtls",
-			"ts_ls",
+			-- "ts_ls",
 			"eslint",
 		}
 
@@ -102,6 +100,7 @@ return {
 				layout = "float",
 			},
 		})
+		local lspconfig = require("lspconfig")
 
 		require("lspkind").init({
 			-- DEPRECATED (use mode instead): enables text annotations

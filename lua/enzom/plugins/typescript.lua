@@ -18,9 +18,9 @@ return {
 				complete_function_calls = false,
 				include_completions_with_insert_text = true,
 				code_lens = "off",
-                    disable_member_code_lens = true,
+				disable_member_code_lens = true,
 				jsx_close_tag = {
-                        enable = false,
+					enable = false,
 					filetypes = { "javascriptreact", "typescriptreact" },
 				},
 			},

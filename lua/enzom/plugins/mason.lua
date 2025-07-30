@@ -9,14 +9,11 @@ return {
 		local servers = {
 			-- "tsserver",
 			"lua_ls",
-			"html",
-			"cssls",
 			"bashls",
 			"jsonls",
 			"marksman",
 			"tailwindcss",
 			"prismals",
-			"jdtls",
 		}
 
 		require("mason-lspconfig").setup({
