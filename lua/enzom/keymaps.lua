@@ -72,3 +72,4 @@ keymap.set("n", "<leader>te", ":Lspsaga term_toggle<CR>", opts)
 
 -- Telescope todos
 keymap.set("n", "<leader>to", ":TodoTelescope<CR>", opts)
+keymap.set("n", "<leader>sf", ":FzfLua files<CR>", opts)

@@ -56,12 +56,12 @@ return {
 
 		require("telescope").load_extension("fzf")
 
-		vim.keymap.set("n", ";sf", function()
-			builtin.find_files({
-				no_ignore = true,
-				hidden = true,
-			})
-		end)
+		-- vim.keymap.set("n", ";sf", function()
+		-- 	builtin.find_files({
+		-- 		no_ignore = true,
+		-- 		hidden = true,
+		-- 	})
+		-- end)
 		vim.keymap.set("n", ";r", function()
 			builtin.live_grep()
 		end)
