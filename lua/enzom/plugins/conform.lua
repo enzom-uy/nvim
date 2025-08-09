@@ -14,6 +14,7 @@ return {
 				json = { "prettierd", "prettier" },
 				yaml = { "prettierd", "prettier" },
 				prisma = { "prettierd", "prettier" },
+				astro = { "prettierd" },
 			},
 			format_on_save = {
 				timeout_ms = 300,
