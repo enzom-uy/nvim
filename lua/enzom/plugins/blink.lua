@@ -6,94 +6,130 @@ return {
 		opts = {},
 	},
 	{
-
 		"saghen/blink.cmp",
-		dependencies = { "rafamadriz/friendly-snippets", "onsails/lspkind.nvim", "giuxtaposition/blink-cmp-copilot" },
-
-		version = "1.*",
+		version = "*",
+		build = "cargo build --release",
+		opts_extend = {
+			"sources.completion.enabled_providers",
+			"sources.compat",
+			"sources.default",
+		},
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			-- add blink.compat to dependencies
+			{
+				"saghen/blink.compat",
+				optional = true, -- make optional so it's only enabled if any extras need it
+				opts = {},
+				version = "*",
+			},
+		},
+		event = "InsertEnter",
 
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
 			enabled = function()
-				local disabled_filetypes = { "DressingInput", "AvanteInput" }
-				return not vim.tbl_contains(disabled_filetypes, vim.bo.filetype)
+				if vim.bo.filetype == { "DressingInput", "AvanteInput" } then
+					return false
+				end
 			end,
-			keymap = {
-				preset = "default",
-				["<CR>"] = { "accept", "fallback" },
-			},
-
 			appearance = {
+				-- sets the fallback highlight groups to nvim-cmp's highlight groups
+				-- useful for when your theme doesn't support blink.cmp
+				-- will be removed in a future release, assuming themes add support
+				use_nvim_cmp_as_default = false,
+				-- set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+				-- adjusts spacing to ensure icons are aligned
 				nerd_font_variant = "mono",
 			},
-
 			completion = {
-				documentation = { auto_show = true },
-				menu = {
-
-					draw = {
-						components = {
-							kind_icon = {
-								text = function(ctx)
-									if ctx.source_name == "copilot" then
-										return "" .. ctx.icon_gap
-									end
-									local icon = ctx.kind_icon
-									if vim.tbl_contains({ "Path" }, ctx.source_name) then
-										local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
-										if dev_icon then
-											icon = dev_icon
-										end
-									else
-										icon = require("lspkind").symbolic(ctx.kind, {
-											mode = "symbol",
-										})
-									end
-
-									return icon .. ctx.icon_gap
-								end,
-
-								-- Optionally, use the highlight groups from nvim-web-devicons
-								-- You can also add the same function for `kind.highlight` if you want to
-								-- keep the highlight groups in sync with the icons.
-								highlight = function(ctx)
-									local hl = ctx.kind_hl
-									if vim.tbl_contains({ "Path" }, ctx.source_name) then
-										local dev_icon, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
-										if dev_icon then
-											hl = dev_hl
-										end
-									end
-									return hl
-								end,
-							},
-						},
+				accept = {
+					-- experimental auto-brackets support
+					auto_brackets = {
+						enabled = true,
 					},
 				},
+				menu = {
+					draw = {
+						treesitter = { "lsp" },
+					},
+				},
+				documentation = {
+					auto_show = true,
+					auto_show_delay_ms = 200,
+				},
+				ghost_text = {
+					enabled = vim.g.ai_cmp,
+				},
 			},
+
+			-- experimental signature help support
+			-- signature = { enabled = true },
 
 			sources = {
-				default = { "copilot", "lsp", "path", "buffer", "snippets" },
-				providers = {
-					copilot = {
-						name = "copilot",
-						module = "blink-cmp-copilot",
-						score_offset = 100,
-						async = true,
-						transform_items = function(_, items)
-							for _, item in ipairs(items) do
-								item.kind_icon = ""
-								item.kind_name = "Copilot"
-							end
-							return items
-						end,
-					},
-				},
+				-- adding any nvim-cmp sources here will enable them
+				-- with blink.compat
+				compat = {},
+				default = { "lsp", "path", "snippets", "buffer" },
 			},
 
-			fuzzy = { implementation = "prefer_rust_with_warning" },
+			cmdline = {
+				enabled = false,
+			},
+
+			keymap = {
+				preset = "enter",
+				["<C-y>"] = { "select_and_accept" },
+			},
 		},
-		opts_extend = { "sources.default" },
+		---@param opts blink.cmp.Config | { sources: { compat: string[] } }
+		config = function(_, opts)
+			-- setup compat sources
+			local enabled = opts.sources.default
+			for _, source in ipairs(opts.sources.compat or {}) do
+				opts.sources.providers[source] = vim.tbl_deep_extend(
+					"force",
+					{ name = source, module = "blink.compat.source" },
+					opts.sources.providers[source] or {}
+				)
+				if type(enabled) == "table" and not vim.tbl_contains(enabled, source) then
+					table.insert(enabled, source)
+				end
+			end
+
+			-- Unset custom prop to pass blink.cmp validation
+			opts.sources.compat = nil
+
+			-- check if we need to override symbol kinds
+			for _, provider in pairs(opts.sources.providers or {}) do
+				---@cast provider blink.cmp.SourceProviderConfig|{kind?:string}
+				if provider.kind then
+					local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
+					local kind_idx = #CompletionItemKind + 1
+
+					CompletionItemKind[kind_idx] = provider.kind
+					---@diagnostic disable-next-line: no-unknown
+					CompletionItemKind[provider.kind] = kind_idx
+
+					---@type fun(ctx: blink.cmp.Context, items: blink.cmp.CompletionItem[]): blink.cmp.CompletionItem[]
+					local transform_items = provider.transform_items
+					---@param ctx blink.cmp.Context
+					---@param items blink.cmp.CompletionItem[]
+					provider.transform_items = function(ctx, items)
+						items = transform_items and transform_items(ctx, items) or items
+						for _, item in ipairs(items) do
+							item.kind = kind_idx or item.kind
+						end
+						return items
+					end
+
+					-- Unset custom prop to pass blink.cmp validation
+					provider.kind = nil
+				end
+			end
+
+			require("blink.cmp").setup(opts)
+		end,
 	},
 }

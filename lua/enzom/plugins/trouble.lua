@@ -4,9 +4,8 @@ return {
 	-- cmd = "Trouble",
 	config = function()
 		require("trouble").setup({})
-
-		vim.cmd([[
-          nnoremap <silent> <leader>xx :Trouble<CR>
-        ]])
+		vim.keymap.set("n", "<leader>xx", function()
+			vim.cmd("Trouble")
+		end, { desc = "Trouble (trouble.nvim)" })
 	end,
 }

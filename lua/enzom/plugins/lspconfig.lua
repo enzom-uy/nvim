@@ -17,16 +17,19 @@ return {
 			lspconfig[server].setup(config)
 		end
 
-		local opts = { buffer = bufnr, noremap = true, silent = true }
+		local optsWithoutDescription = { buffer = bufnr, noremap = true, silent = true }
+		local optsWithDescription = function(desc)
+			return vim.tbl_extend("force", optsWithoutDescription, { desc = desc })
+		end
 
-		vim.keymap.set("n", "<S-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-		vim.keymap.set("n", "md", ":lua vim.diagnostic.open_float()<CR>", opts)
-		vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
-		vim.keymap.set("n", "gd", "<Cmd>Lspsaga goto_definition<CR>", opts)
-		vim.keymap.set("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>", opts)
-		vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
-		vim.keymap.set("n", "<leader>gr", "<Cmd>Lspsaga rename<CR>", opts)
-		vim.keymap.set("n", "<leader>af", ":lua vim.lsp.buf.code_action()<CR>")
+		vim.keymap.set("n", "<S-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", optsWithDescription("Next diagnostic"))
+		vim.keymap.set("n", "md", ":lua vim.diagnostic.open_float()<CR>", optsWithDescription("Show line diagnostics"))
+		vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", optsWithDescription("Show hover doc"))
+		vim.keymap.set("n", "gd", "<Cmd>Lspsaga goto_definition<CR>", optsWithDescription("Goto definition"))
+		vim.keymap.set("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>", optsWithDescription("Goto type definition"))
+		vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", optsWithDescription("Peek definition"))
+		vim.keymap.set("n", "<leader>gr", "<Cmd>Lspsaga rename<CR>", optsWithDescription("Rename"))
+		vim.keymap.set("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", optsWithDescription("Code action"))
 
 		local saga = require("lspsaga")
 
