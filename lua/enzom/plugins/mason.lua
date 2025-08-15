@@ -18,6 +18,7 @@ return {
 
             -- managed by typescript-tools
             "ts_ls",
+            'intelephense',
         }
 
         mason_lsp.setup({
