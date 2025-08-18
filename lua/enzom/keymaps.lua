@@ -71,7 +71,7 @@ keymap.set("n", "<leader>te", ":Lspsaga term_toggle<CR>", opts("Toggle terminal"
 
 keymap.set("n", "<leader>sf", ":FzfLua files<CR>", opts("File finder"))
 keymap.set("n", "<leader>r",
-    ":lua require('fzf-lua').live_grep({ cmd = 'git grep --line-number --column --color=always' })<CR>",
+    ":lua require('fzf-lua').live_grep_native({ cmd = 'git grep --line-number --column --color=always' })<CR>",
     opts("Live grep"))
 keymap.set("n", ";;", ":lua require('fzf-lua').resume()<CR>", opts("Resume"))
 
