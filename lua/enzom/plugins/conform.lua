@@ -16,6 +16,7 @@ return {
                 prisma = { "prettierd", "prettier" },
                 astro = { "prettierd" },
                 php = { "php-cs-fixer" },
+                go = { "gofmt" }
             },
             format_on_save = {
                 timeout_ms = 300,

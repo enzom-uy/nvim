@@ -15,8 +15,8 @@ keymap.set("n", "<leader>q", ":q<CR>", optsWithoutDesc)
 keymap.set("i", "jk", "<Esc>", optsWithoutDesc)
 
 keymap.set("n", "<leader>d", ":lua require('nvim-smartbufs').close_current_buffer()<CR>", opts("Close current buffer."))
-keymap.set("n", "<S-h>", ":lua require('nvim-smartbufs').goto_prev_buffer()<CR>", opts("Previous buffer"))
-keymap.set("n", "<S-l>", ":lua require('nvim-smartbufs').goto_next_buffer()<CR>", opts("Next buffer"))
+keymap.set("n", "<S-h>", ":BufferPrevious<CR>", opts("Previous buffer"))
+keymap.set("n", "<S-l>", ":BufferNext<CR>", opts("Next buffer"))
 
 keymap.set("n", "<C-s>", ":w<CR>", opts("Save file"))
 
