@@ -4,4 +4,4 @@ require("enzom.keymaps")
 require("enzom.autocmd")
 
 
-vim.cmd("colorscheme catppuccin-mocha")
+vim.cmd("colorscheme rose-pine")
