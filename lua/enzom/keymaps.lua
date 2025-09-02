@@ -2,12 +2,12 @@ local keymap = vim.keymap
 local optsWithoutDesc = { noremap = true, silent = true }
 
 local opts = function(desc)
-    return { noremap = true, silent = true, desc = desc }
+	return { noremap = true, silent = true, desc = desc }
 end
 
 keymap.set("n", "x", '"_x', optsWithoutDesc)
 keymap.set("x", "p", function()
-    return 'pgv"' .. vim.v.register .. "y"
+	return 'pgv"' .. vim.v.register .. "y"
 end, { remap = false, expr = true }, optsWithoutDesc)
 
 keymap.set("n", "<leader>q", ":q<CR>", optsWithoutDesc)
@@ -68,12 +68,5 @@ keymap.set("n", "<A-4>", ":lua require('harpoon.ui').nav_file(4)<CR>", optsWitho
 keymap.set("n", "<space>z", ":ZenMode<CR>", opts("Toggle Zen Mode"))
 
 keymap.set("n", "<leader>te", ":Lspsaga term_toggle<CR>", opts("Toggle terminal"))
-
-keymap.set("n", "<leader>sf", ":FzfLua files<CR>", opts("File finder"))
-keymap.set("n", "<leader>r",
-    ":lua require('fzf-lua').live_grep_native({ cmd = 'git grep --line-number --column --color=always' })<CR>",
-    opts("Live grep"))
-keymap.set("n", ";;", ":lua require('fzf-lua').resume()<CR>", opts("Resume"))
-
 
 keymap.set("n", "<leader>l", ":Twilight<CR>", opts("Toggle Twilight"))
