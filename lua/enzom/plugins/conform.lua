@@ -17,7 +17,7 @@ return {
                 astro = { "prettierd" },
                 php = { "php-cs-fixer" },
                 go = { "gofmt" },
-                sql = { "sqlfmt" }
+                sql = { "sql_formatter" }
             },
             format_on_save = {
                 timeout_ms = 300,
