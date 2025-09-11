@@ -72,6 +72,7 @@ keymap.set("n", "<leader>te", ":Lspsaga term_toggle<CR>", opts("Toggle terminal"
 keymap.set("n", "<leader>l", ":Twilight<CR>", opts("Toggle Twilight"))
 
 keymap.set("n", "<leader>at", ":CopilotChatToggle<CR>", opts("Toggle Copilot Chat"))
+keymap.set("v", "<leader>at", ":CopilotChat<CR>", opts("Toggle Copilot Chat"))
 
 -- Quick chat keybinding
 vim.keymap.set('n', '<leader>ccq', function()
