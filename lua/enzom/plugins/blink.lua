@@ -70,7 +70,7 @@ return {
                 -- adding any nvim-cmp sources here will enable them
                 -- with blink.compat
                 compat = {},
-                default = { "lsp", "path", "snippets", "buffer" },
+                default = { "path", "lsp", "snippets", "buffer" },
             },
 
             cmdline = {
