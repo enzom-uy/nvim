@@ -7,6 +7,7 @@ return {
 		servers = {
 			lua_ls = {},
 			astro = {},
+			ts_ls = {},
 		},
 	},
 	config = function(_, opts)
