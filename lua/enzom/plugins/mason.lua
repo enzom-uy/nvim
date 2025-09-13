@@ -27,7 +27,7 @@ return {
 			automatic_installation = true,
 			automatic_enable = {
 				exclude = {
-					-- "ts_ls",
+					"ts_ls",
 					"jdtls",
 				},
 			},
