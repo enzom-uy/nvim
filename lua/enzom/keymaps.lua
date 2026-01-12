@@ -2,12 +2,12 @@ local keymap = vim.keymap
 local optsWithoutDesc = { noremap = true, silent = true }
 
 local opts = function(desc)
-    return { noremap = true, silent = true, desc = desc }
+	return { noremap = true, silent = true, desc = desc }
 end
 
 keymap.set("n", "x", '"_x', optsWithoutDesc)
 keymap.set("x", "p", function()
-    return 'pgv"' .. vim.v.register .. "y"
+	return 'pgv"' .. vim.v.register .. "y"
 end, { remap = false, expr = true }, optsWithoutDesc)
 
 keymap.set("n", "<leader>q", ":q<CR>", optsWithoutDesc)
@@ -75,11 +75,11 @@ keymap.set("n", "<leader>at", ":CopilotChatToggle<CR>", opts("Toggle Copilot Cha
 keymap.set("v", "<leader>at", ":CopilotChat<CR>", opts("Toggle Copilot Chat"))
 
 -- Quick chat keybinding
-vim.keymap.set('n', '<leader>ccq', function()
-    local input = vim.fn.input("Quick Chat: ")
-    if input ~= "" then
-        require("CopilotChat").ask(input, {
-            selection = require("CopilotChat.select").buffer
-        })
-    end
+vim.keymap.set("n", "<leader>ccq", function()
+	local input = vim.fn.input("Quick Chat: ")
+	if input ~= "" then
+		require("CopilotChat").ask(input, {
+			selection = require("CopilotChat.select").buffer,
+		})
+	end
 end, { desc = "CopilotChat - Quick chat" })
