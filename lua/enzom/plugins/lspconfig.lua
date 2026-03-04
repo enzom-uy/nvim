@@ -8,7 +8,7 @@ return {
 			lua_ls = {},
 			astro = {},
 			-- ts_ls = {},
-			eslint = {
+			eslint_d = {
 				settings = {
 					format = false,
 					workingDirectories = { mode = "auto" },

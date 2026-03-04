@@ -1,6 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "*",
+	-- tag = "*",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -32,5 +32,6 @@ return {
 		keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 		keymap.set("n", "<leader>r", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 		keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+		keymap.set("n", "<leader>;", "<cmd>Telescope resume<cr>", { desc = "Resume last search" })
 	end,
 }
