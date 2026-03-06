@@ -18,7 +18,10 @@ return {
 	},
 	config = function()
 		local status, ts = pcall(require, "nvim-treesitter.configs")
-		require("treesitter-context").setup()
+		require("treesitter-context").setup({
+			enable = true,
+			max_lines = 5,
+		})
 		if not status then
 			return
 		end

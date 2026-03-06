@@ -15,6 +15,7 @@ return {
 			"tailwindcss",
 			"prismals",
 			"astro",
+			"qmlls",
 
 			-- managed by typescript-tools
 			"ts_ls",
