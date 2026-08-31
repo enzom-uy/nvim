@@ -2,12 +2,12 @@ local keymap = vim.keymap
 local optsWithoutDesc = { noremap = true, silent = true }
 
 local opts = function(desc)
-	return { noremap = true, silent = true, desc = desc }
+    return { noremap = true, silent = true, desc = desc }
 end
 
 keymap.set("n", "x", '"_x', optsWithoutDesc)
 keymap.set("x", "p", function()
-	return 'pgv"' .. vim.v.register .. "y"
+    return 'pgv"' .. vim.v.register .. "y"
 end, { remap = false, expr = true }, optsWithoutDesc)
 
 keymap.set("n", "<leader>q", ":q<CR>", optsWithoutDesc)
@@ -65,18 +65,21 @@ keymap.set("n", "<A-3>", ":lua require('harpoon.ui').nav_file(3)<CR>", optsWitho
 keymap.set("n", "<A-4>", ":lua require('harpoon.ui').nav_file(4)<CR>", optsWithoutDesc)
 
 keymap.set("n", "<leader>te", ":Lspsaga term_toggle<CR>", opts("Toggle terminal"))
+keymap.set("n", "<S-j>", vim.diagnostic.goto_next, optsWithoutDesc)
+keymap.set("n", "md", vim.diagnostic.open_float, optsWithoutDesc)
+keymap.set("n", "K", vim.lsp.buf.hover, optsWithoutDesc)
+keymap.set("n", "gd", vim.lsp.buf.definition, optsWithoutDesc)
+keymap.set("n", "gt", vim.lsp.buf.type_definition, optsWithoutDesc)
+keymap.set("n", "gp", vim.lsp.buf.declaration, optsWithoutDesc)
+keymap.set("n", "<leader>gr", vim.lsp.buf.rename, optsWithoutDesc)
+keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, optsWithoutDesc)
 
 keymap.set("n", "<leader>l", ":Twilight<CR>", opts("Toggle Twilight"))
 
-keymap.set("n", "<leader>at", ":CopilotChatToggle<CR>", opts("Toggle Copilot Chat"))
-keymap.set("v", "<leader>at", ":CopilotChat<CR>", opts("Toggle Copilot Chat"))
 
--- Quick chat keybinding
-vim.keymap.set("n", "<leader>ccq", function()
-	local input = vim.fn.input("Quick Chat: ")
-	if input ~= "" then
-		require("CopilotChat").ask(input, {
-			selection = require("CopilotChat.select").buffer,
-		})
-	end
-end, { desc = "CopilotChat - Quick chat" })
+keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", opts("Open Nvim-Tree"))
+
+keymap.set("n", "<leader>sf", ":Pick files<CR>", opts("Open file finder"))
+keymap.set("n", "<leader>r", ":Pick grep_live<CR>", opts("Open live grep"))
+keymap.set("n", "<leader>;", ":Pick resume<CR>", opts("Resume last mini.pick action"))
+keymap.set("n", "<leader>sb", ":Pick buffers<CR>", opts("Search buffers"))
