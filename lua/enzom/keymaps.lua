@@ -83,3 +83,5 @@ keymap.set("n", "<leader>sf", ":Pick files<CR>", opts("Open file finder"))
 keymap.set("n", "<leader>r", ":Pick grep_live<CR>", opts("Open live grep"))
 keymap.set("n", "<leader>;", ":Pick resume<CR>", opts("Resume last mini.pick action"))
 keymap.set("n", "<leader>sb", ":Pick buffers<CR>", opts("Search buffers"))
+
+keymap.set("n", "<leader>o", ":Oil<CR>", opts("Open Oil.nvim"))
