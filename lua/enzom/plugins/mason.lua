@@ -18,7 +18,7 @@ return {
                 "prismals",
                 "astro",
                 "qmlls",
-                "ts_ls",
+                "tsc",
                 "intelephense",
             },
 
