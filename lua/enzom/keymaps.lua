@@ -56,13 +56,6 @@ keymap.set("x", "au", ':lua require"treesitter-unit".select(true)<CR>', optsWith
 keymap.set("o", "iu", ':<c-u>lua require"treesitter-unit".select()<CR>', optsWithoutDesc)
 keymap.set("o", "au", ':<c-u>lua require"treesitter-unit".select(true)<CR>', optsWithoutDesc)
 
--- Harpoon
-keymap.set("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>", opts("Add harpoon"))
-keymap.set("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts("Toggle harpoon quick menu"))
-keymap.set("n", "<A-1>", ":lua require('harpoon.ui').nav_file(1)<CR>", optsWithoutDesc)
-keymap.set("n", "<A-2>", ":lua require('harpoon.ui').nav_file(2)<CR>", optsWithoutDesc)
-keymap.set("n", "<A-3>", ":lua require('harpoon.ui').nav_file(3)<CR>", optsWithoutDesc)
-keymap.set("n", "<A-4>", ":lua require('harpoon.ui').nav_file(4)<CR>", optsWithoutDesc)
 
 keymap.set("n", "<leader>te", ":Lspsaga term_toggle<CR>", opts("Toggle terminal"))
 keymap.set("n", "<S-j>", vim.diagnostic.goto_next, optsWithoutDesc)

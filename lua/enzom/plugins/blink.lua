@@ -74,12 +74,14 @@ return {
             },
 
             cmdline = {
-                enabled = false,
+                enabled = true,
             },
 
             keymap = {
                 preset = "enter",
                 ["<C-y>"] = { "select_and_accept" },
+                ["<C-j>"] = { "select_next" },
+                ["<C-k>"] = { "select_prev" },
             },
         },
         ---@param opts blink.cmp.Config | { sources: { compat: string[] } }

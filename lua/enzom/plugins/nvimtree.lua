@@ -2,6 +2,10 @@ return {
     'https://github.com/nvim-tree/nvim-tree.lua',
     enabled = true,
     config = function()
-        require("nvim-tree").setup()
+        require("nvim-tree").setup({
+            view = {
+                width = 50
+            }
+        })
     end
 }
